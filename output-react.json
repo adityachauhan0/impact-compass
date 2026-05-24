@@ -49,37 +49,37 @@
     {
       "key": "demand",
       "label": "Demand",
-      "score": 83,
+      "score": 100,
       "note": "Demand reads public-search targets for \"react state management\" across free sources."
     },
     {
       "key": "pain",
       "label": "Pain",
-      "score": 83,
+      "score": 99,
       "note": "Pain reads workaround and complaint language around \"react state management\"."
     },
     {
       "key": "momentum",
       "label": "Momentum",
-      "score": 76,
+      "score": 100,
       "note": "Momentum reads recent public activity around \"atomic state\"."
     },
     {
       "key": "competitionFit",
       "label": "Competition Fit",
-      "score": 83,
+      "score": 100,
       "note": "Competition Fit compares visible alternatives such as \"zustand\"."
     },
     {
       "key": "activity",
       "label": "Activity",
-      "score": 75,
+      "score": 100,
       "note": "Activity reads builder and package signals around \"atomic state\"."
     },
     {
       "key": "channelFit",
       "label": "Channel Fit",
-      "score": 77,
+      "score": 100,
       "note": "Channel Fit checks whether \"frontend developer\" has reachable public communities."
     },
     {
@@ -100,7 +100,7 @@
         "question intent",
         "engagement percentile"
       ],
-      "score": 83
+      "score": 100
     },
     {
       "pillar": "Pain",
@@ -112,7 +112,7 @@
         "alternative seeking",
         "discussion depth"
       ],
-      "score": 83
+      "score": 99
     },
     {
       "pillar": "Momentum",
@@ -124,7 +124,7 @@
         "sustained trend",
         "spike penalty"
       ],
-      "score": 76
+      "score": 100
     },
     {
       "pillar": "Competition Fit",
@@ -136,7 +136,7 @@
         "repo/package supply",
         "saturation penalty"
       ],
-      "score": 83
+      "score": 100
     },
     {
       "pillar": "Activity",
@@ -148,7 +148,7 @@
         "launch recency",
         "discussion freshness"
       ],
-      "score": 75
+      "score": 100
     },
     {
       "pillar": "Channel Fit",
@@ -160,7 +160,7 @@
         "top channel engagement",
         "lens match"
       ],
-      "score": 77
+      "score": 100
     },
     {
       "pillar": "Evidence Quality",
@@ -178,12 +178,12 @@
     }
   ],
   "summary": {
-    "score": 82,
+    "score": 99,
     "uncertainty": 9,
     "confidence": "Medium",
     "range": {
-      "lower": 73,
-      "upper": 91
+      "lower": 90,
+      "upper": 100
     }
   },
   "integrity": {
@@ -203,7 +203,7 @@
       "included": true,
       "reason": "0 stars",
       "duplicateCluster": "gh-1215644578",
-      "signalStrength": 90
+      "signalStrength": 0
     },
     {
       "id": "gh-1215392739",
@@ -217,7 +217,7 @@
       "included": true,
       "reason": "0 stars",
       "duplicateCluster": "gh-1215392739",
-      "signalStrength": 90
+      "signalStrength": 0
     },
     {
       "id": "gh-996703673",
@@ -231,7 +231,7 @@
       "included": true,
       "reason": "14 stars",
       "duplicateCluster": "gh-996703673",
-      "signalStrength": 90
+      "signalStrength": 23.521825181113627
     },
     {
       "id": "gh-1132373899",
@@ -245,7 +245,7 @@
       "included": true,
       "reason": "0 stars",
       "duplicateCluster": "gh-1132373899",
-      "signalStrength": 90
+      "signalStrength": 0
     },
     {
       "id": "gh-550174033",
@@ -259,7 +259,7 @@
       "included": true,
       "reason": "56 stars",
       "duplicateCluster": "gh-550174033",
-      "signalStrength": 90
+      "signalStrength": 35.11749711344983
     },
     {
       "id": "ghi-4487977596",
@@ -273,7 +273,7 @@
       "included": true,
       "reason": "3 comments",
       "duplicateCluster": "ghi-4487977596",
-      "signalStrength": 85
+      "signalStrength": 18.06179973983887
     },
     {
       "id": "ghi-4487992258",
@@ -287,7 +287,7 @@
       "included": true,
       "reason": "0 comments",
       "duplicateCluster": "ghi-4487992258",
-      "signalStrength": 85
+      "signalStrength": 0
     },
     {
       "id": "ghi-4487984253",
@@ -301,7 +301,7 @@
       "included": true,
       "reason": "0 comments",
       "duplicateCluster": "ghi-4487984253",
-      "signalStrength": 85
+      "signalStrength": 0
     },
     {
       "id": "ghi-4487996470",
@@ -315,7 +315,7 @@
       "included": true,
       "reason": "0 comments",
       "duplicateCluster": "ghi-4487996470",
-      "signalStrength": 85
+      "signalStrength": 0
     },
     {
       "id": "ghi-4506080099",
@@ -329,7 +329,7 @@
       "included": true,
       "reason": "0 comments",
       "duplicateCluster": "ghi-4506080099",
-      "signalStrength": 85
+      "signalStrength": 0
     },
     {
       "id": "ghc-180328715",
@@ -343,7 +343,7 @@
       "included": true,
       "reason": "2057 forks",
       "duplicateCluster": "ghc-180328715",
-      "signalStrength": 80
+      "signalStrength": 82.83613426066036
     },
     {
       "id": "ghc-701771067",
@@ -357,7 +357,7 @@
       "included": true,
       "reason": "113 forks",
       "duplicateCluster": "ghc-701771067",
-      "signalStrength": 80
+      "signalStrength": 51.422621283411814
     },
     {
       "id": "ghc-410820077",
@@ -371,7 +371,7 @@
       "included": true,
       "reason": "33 forks",
       "duplicateCluster": "ghc-410820077",
-      "signalStrength": 80
+      "signalStrength": 38.28697292605638
     },
     {
       "id": "ghc-353865159",
@@ -385,7 +385,7 @@
       "included": true,
       "reason": "28 forks",
       "duplicateCluster": "ghc-353865159",
-      "signalStrength": 80
+      "signalStrength": 14.623979978989562
     },
     {
       "id": "ghc-384152250",
@@ -399,7 +399,7 @@
       "included": true,
       "reason": "19 forks",
       "duplicateCluster": "ghc-384152250",
-      "signalStrength": 80
+      "signalStrength": 32.52574989159953
     },
     {
       "id": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
@@ -413,7 +413,21 @@
       "included": true,
       "reason": "Recent commit",
       "duplicateCluster": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
-      "signalStrength": 75
+      "signalStrength": 50
+    },
+    {
+      "id": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
+      "source": "GitHub",
+      "sourceType": "commit",
+      "date": "2026-04-27",
+      "query": "atomic state",
+      "snippet": "drm: Rename struct drm_atomic_state to drm_atomic_",
+      "link": "https://github.com/sudo-su-f/drm-tip/commit/5164f7e7ff8ec7d41065d3862630c2ba09854328",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Recent commit",
+      "duplicateCluster": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
+      "signalStrength": 50
     },
     {
       "id": "ghm-3dc8aeb716bebc67b3c9843ddc518880a55983e6",
@@ -427,7 +441,7 @@
       "included": true,
       "reason": "Recent commit",
       "duplicateCluster": "ghm-3dc8aeb716bebc67b3c9843ddc518880a55983e6",
-      "signalStrength": 75
+      "signalStrength": 20
     },
     {
       "id": "ghm-a63d6bac9375e669aa401dd7b1ff0ed808d3ffbf",
@@ -441,35 +455,21 @@
       "included": true,
       "reason": "Recent commit",
       "duplicateCluster": "ghm-a63d6bac9375e669aa401dd7b1ff0ed808d3ffbf",
-      "signalStrength": 75
+      "signalStrength": 50
     },
     {
-      "id": "ghm-ae8c0a55c79525251422d3fb301348956911b70c",
+      "id": "ghm-42750ca687871d126bd785b8bda35a983c414c4d",
       "source": "GitHub",
       "sourceType": "commit",
-      "date": "2026-05-03",
+      "date": "2026-05-22",
       "query": "atomic state",
-      "snippet": "Merge pull request #8 from Lex-MT-Team/fix/mcp-cir",
-      "link": "https://github.com/Lex-MT-Team/mt-text-client/commit/ae8c0a55c79525251422d3fb301348956911b70c",
+      "snippet": "state: write seen keys atomically (#11)",
+      "link": "https://github.com/drakulavich/uae-news-digest/commit/42750ca687871d126bd785b8bda35a983c414c4d",
       "metricContribution": "Momentum",
       "included": true,
       "reason": "Recent commit",
-      "duplicateCluster": "ghm-ae8c0a55c79525251422d3fb301348956911b70c",
-      "signalStrength": 75
-    },
-    {
-      "id": "ghm-a4c011b83529b2d2f6060e092a5a6f5259035493",
-      "source": "GitHub",
-      "sourceType": "commit",
-      "date": "2026-04-18",
-      "query": "atomic state",
-      "snippet": "Merge pull request #7 from asshat1981ar/copilot/fi",
-      "link": "https://github.com/asshat1981ar/gadk/commit/a4c011b83529b2d2f6060e092a5a6f5259035493",
-      "metricContribution": "Momentum",
-      "included": true,
-      "reason": "Recent commit",
-      "duplicateCluster": "ghm-a4c011b83529b2d2f6060e092a5a6f5259035493",
-      "signalStrength": 75
+      "duplicateCluster": "ghm-42750ca687871d126bd785b8bda35a983c414c4d",
+      "signalStrength": 50
     },
     {
       "id": "ghu-160781484",
@@ -483,7 +483,7 @@
       "included": true,
       "reason": "Target audience found",
       "duplicateCluster": "ghu-160781484",
-      "signalStrength": 70
+      "signalStrength": 20
     },
     {
       "id": "ghu-155313517",
@@ -497,7 +497,7 @@
       "included": true,
       "reason": "Target audience found",
       "duplicateCluster": "ghu-155313517",
-      "signalStrength": 70
+      "signalStrength": 50
     },
     {
       "id": "ghu-220635032",
@@ -511,7 +511,7 @@
       "included": true,
       "reason": "Target audience found",
       "duplicateCluster": "ghu-220635032",
-      "signalStrength": 70
+      "signalStrength": 20
     },
     {
       "id": "ghu-7837024",
@@ -525,7 +525,7 @@
       "included": true,
       "reason": "Target audience found",
       "duplicateCluster": "ghu-7837024",
-      "signalStrength": 70
+      "signalStrength": 20
     },
     {
       "id": "ghu-99093072",
@@ -539,7 +539,7 @@
       "included": true,
       "reason": "Target audience found",
       "duplicateCluster": "ghu-99093072",
-      "signalStrength": 70
+      "signalStrength": 20
     },
     {
       "id": "hn-45715026",
@@ -553,7 +553,7 @@
       "included": true,
       "reason": "10 points",
       "duplicateCluster": "hn-45715026",
-      "signalStrength": 85
+      "signalStrength": 31.241780554746747
     },
     {
       "id": "hn-27893160",
@@ -567,7 +567,7 @@
       "included": true,
       "reason": "3 points",
       "duplicateCluster": "hn-27893160",
-      "signalStrength": 85
+      "signalStrength": 18.06179973983887
     },
     {
       "id": "hn-38988469",
@@ -581,7 +581,7 @@
       "included": true,
       "reason": "2 points",
       "duplicateCluster": "hn-38988469",
-      "signalStrength": 85
+      "signalStrength": 14.313637641589873
     },
     {
       "id": "hn-47086536",
@@ -595,7 +595,7 @@
       "included": true,
       "reason": "1 points",
       "duplicateCluster": "hn-47086536",
-      "signalStrength": 85
+      "signalStrength": 9.030899869919436
     },
     {
       "id": "hn-29912190",
@@ -609,7 +609,7 @@
       "included": true,
       "reason": "1 points",
       "duplicateCluster": "hn-29912190",
-      "signalStrength": 85
+      "signalStrength": 9.030899869919436
     },
     {
       "id": "hnc-47976189",
@@ -623,7 +623,7 @@
       "included": true,
       "reason": "Discussion on problem",
       "duplicateCluster": "hnc-47976189",
-      "signalStrength": 80
+      "signalStrength": 24
     },
     {
       "id": "hnc-47604168",
@@ -637,7 +637,7 @@
       "included": true,
       "reason": "Discussion on problem",
       "duplicateCluster": "hnc-47604168",
-      "signalStrength": 80
+      "signalStrength": 24
     },
     {
       "id": "hnc-47091960",
@@ -651,7 +651,7 @@
       "included": true,
       "reason": "Discussion on problem",
       "duplicateCluster": "hnc-47091960",
-      "signalStrength": 80
+      "signalStrength": 60
     },
     {
       "id": "hnc-46753984",
@@ -665,7 +665,7 @@
       "included": true,
       "reason": "Discussion on problem",
       "duplicateCluster": "hnc-46753984",
-      "signalStrength": 80
+      "signalStrength": 24
     },
     {
       "id": "hnc-46703276",
@@ -679,7 +679,7 @@
       "included": true,
       "reason": "Discussion on problem",
       "duplicateCluster": "hnc-46703276",
-      "signalStrength": 80
+      "signalStrength": 60
     },
     {
       "id": "hna-33765399",
@@ -693,7 +693,7 @@
       "included": true,
       "reason": "Audience discussion",
       "duplicateCluster": "hna-33765399",
-      "signalStrength": 75
+      "signalStrength": 58.48558572123763
     },
     {
       "id": "hna-19561718",
@@ -707,7 +707,7 @@
       "included": true,
       "reason": "Audience discussion",
       "duplicateCluster": "hna-19561718",
-      "signalStrength": 75
+      "signalStrength": 53.34905905779908
     },
     {
       "id": "hna-13527153",
@@ -721,7 +721,7 @@
       "included": true,
       "reason": "Audience discussion",
       "duplicateCluster": "hna-13527153",
-      "signalStrength": 75
+      "signalStrength": 53.255156633631486
     },
     {
       "id": "hna-14322953",
@@ -735,7 +735,7 @@
       "included": true,
       "reason": "Audience discussion",
       "duplicateCluster": "hna-14322953",
-      "signalStrength": 75
+      "signalStrength": 50.65508757984995
     },
     {
       "id": "hna-3833200",
@@ -749,7 +749,7 @@
       "included": true,
       "reason": "Audience discussion",
       "duplicateCluster": "hna-3833200",
-      "signalStrength": 75
+      "signalStrength": 49.88309188036886
     },
     {
       "id": "hnm-48222268",
@@ -763,7 +763,7 @@
       "included": true,
       "reason": "Recent growth",
       "duplicateCluster": "hnm-48222268",
-      "signalStrength": 80
+      "signalStrength": 7.224719895935549
     },
     {
       "id": "hnm-48000534",
@@ -777,7 +777,7 @@
       "included": true,
       "reason": "Recent growth",
       "duplicateCluster": "hnm-48000534",
-      "signalStrength": 80
+      "signalStrength": 11.450910113271899
     },
     {
       "id": "hnm-47928842",
@@ -791,7 +791,7 @@
       "included": true,
       "reason": "Recent growth",
       "duplicateCluster": "hnm-47928842",
-      "signalStrength": 80
+      "signalStrength": 11.450910113271899
     },
     {
       "id": "hnm-47520615",
@@ -805,7 +805,7 @@
       "included": true,
       "reason": "Recent growth",
       "duplicateCluster": "hnm-47520615",
-      "signalStrength": 80
+      "signalStrength": 14.313637641589873
     },
     {
       "id": "hnm-47422178",
@@ -819,7 +819,7 @@
       "included": true,
       "reason": "Recent growth",
       "duplicateCluster": "hnm-47422178",
-      "signalStrength": 80
+      "signalStrength": 10.141176480171083
     },
     {
       "id": "hnp-48045184",
@@ -833,7 +833,7 @@
       "included": true,
       "reason": "Competitor mentioned",
       "duplicateCluster": "hnp-48045184",
-      "signalStrength": 75
+      "signalStrength": 15.05149978319906
     },
     {
       "id": "hnp-45250379",
@@ -847,7 +847,7 @@
       "included": true,
       "reason": "Competitor mentioned",
       "duplicateCluster": "hnp-45250379",
-      "signalStrength": 75
+      "signalStrength": 15.05149978319906
     },
     {
       "id": "hnp-33682804",
@@ -861,7 +861,7 @@
       "included": true,
       "reason": "Competitor mentioned",
       "duplicateCluster": "hnp-33682804",
-      "signalStrength": 75
+      "signalStrength": 15.05149978319906
     },
     {
       "id": "hnp-40809735",
@@ -875,7 +875,7 @@
       "included": true,
       "reason": "Competitor mentioned",
       "duplicateCluster": "hnp-40809735",
-      "signalStrength": 75
+      "signalStrength": 11.928031367991561
     },
     {
       "id": "hnp-45991083",
@@ -889,7 +889,7 @@
       "included": true,
       "reason": "Competitor mentioned",
       "duplicateCluster": "hnp-45991083",
-      "signalStrength": 75
+      "signalStrength": 11.928031367991561
     },
     {
       "id": "rd-1sq53ul",
@@ -901,9 +901,9 @@
       "link": "https://reddit.com/r/GirlDinnerDiaries/comments/1sq53ul/bf_is_incompetent/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "8226 score",
+      "reason": "8219 score",
       "duplicateCluster": "rd-1sq53ul",
-      "signalStrength": 85
+      "signalStrength": 31.318974540320404
     },
     {
       "id": "rd-1l62j09",
@@ -915,9 +915,9 @@
       "link": "https://reddit.com/r/AITAH/comments/1l62j09/update_aitah_for_telling_a_woman_at_the_gym_that/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "36168 score",
+      "reason": "36164 score",
       "duplicateCluster": "rd-1l62j09",
-      "signalStrength": 85
+      "signalStrength": 36.46630775546509
     },
     {
       "id": "rd-1nq3f5k",
@@ -929,9 +929,9 @@
       "link": "https://reddit.com/r/reactjs/comments/1nq3f5k/react_state_management_in_2025_what_you_actually/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "173 score",
+      "reason": "169 score",
       "duplicateCluster": "rd-1nq3f5k",
-      "signalStrength": 85
+      "signalStrength": 44.60897842756548
     },
     {
       "id": "rd-1jvo2ev",
@@ -943,9 +943,9 @@
       "link": "https://reddit.com/r/popculture/comments/1jvo2ev/justin_bieber_goes_on_wild_unprovoked_tirade/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "4652 score",
+      "reason": "4644 score",
       "duplicateCluster": "rd-1jvo2ev",
-      "signalStrength": 85
+      "signalStrength": 29.335885746637288
     },
     {
       "id": "rd-1qn6pd4",
@@ -959,7 +959,7 @@
       "included": true,
       "reason": "3370 score",
       "duplicateCluster": "rd-1qn6pd4",
-      "signalStrength": 85
+      "signalStrength": 28.22207002016778
     },
     {
       "id": "rdd-1t8hndw",
@@ -973,7 +973,7 @@
       "included": true,
       "reason": "777 comments",
       "duplicateCluster": "rdd-1t8hndw",
-      "signalStrength": 80
+      "signalStrength": 72.27448992474223
     },
     {
       "id": "rdd-1rj17ie",
@@ -987,7 +987,7 @@
       "included": true,
       "reason": "118 comments",
       "duplicateCluster": "rdd-1rj17ie",
-      "signalStrength": 80
+      "signalStrength": 51.88867403481328
     },
     {
       "id": "rdd-1rmp765",
@@ -1001,7 +1001,7 @@
       "included": true,
       "reason": "261 comments",
       "duplicateCluster": "rdd-1rmp765",
-      "signalStrength": 80
+      "signalStrength": 60.45753228299363
     },
     {
       "id": "rdd-tcolgq",
@@ -1015,7 +1015,7 @@
       "included": true,
       "reason": "1186 comments",
       "duplicateCluster": "rdd-tcolgq",
-      "signalStrength": 80
+      "signalStrength": 76.86126797386478
     },
     {
       "id": "rdd-1t8nazu",
@@ -1029,7 +1029,7 @@
       "included": true,
       "reason": "99 comments",
       "duplicateCluster": "rdd-1t8nazu",
-      "signalStrength": 80
+      "signalStrength": 50
     },
     {
       "id": "rdc-2qh30",
@@ -1043,7 +1043,7 @@
       "included": true,
       "reason": "2435945 subscribers",
       "duplicateCluster": "rdc-2qh30",
-      "signalStrength": 90
+      "signalStrength": 38.32000593981931
     },
     {
       "id": "rdc-2sr2y",
@@ -1057,7 +1057,7 @@
       "included": true,
       "reason": "340526 subscribers",
       "duplicateCluster": "rdc-2sr2y",
-      "signalStrength": 90
+      "signalStrength": 82.98227328497128
     },
     {
       "id": "rdc-2dfnk0",
@@ -1071,7 +1071,7 @@
       "included": true,
       "reason": "1540948 subscribers",
       "duplicateCluster": "rdc-2dfnk0",
-      "signalStrength": 90
+      "signalStrength": 92.81682398001281
     },
     {
       "id": "rdc-341hd",
@@ -1085,7 +1085,7 @@
       "included": true,
       "reason": "679 subscribers",
       "duplicateCluster": "rdc-341hd",
-      "signalStrength": 90
+      "signalStrength": 42.48763369059354
     },
     {
       "id": "rdc-2qs0q",
@@ -1097,9 +1097,9 @@
       "link": "https://reddit.com/r/webdev/",
       "metricContribution": "Channel Fit",
       "included": true,
-      "reason": "3253344 subscribers",
+      "reason": "3253345 subscribers",
       "duplicateCluster": "rdc-2qs0q",
-      "signalStrength": 90
+      "signalStrength": 97.68495380766576
     },
     {
       "id": "rdm-1tm9cn8",
@@ -1113,7 +1113,7 @@
       "included": true,
       "reason": "Recent post",
       "duplicateCluster": "rdm-1tm9cn8",
-      "signalStrength": 75
+      "signalStrength": 3.8169700377572995
     },
     {
       "id": "rdm-1tm8osp",
@@ -1127,7 +1127,7 @@
       "included": true,
       "reason": "Recent post",
       "duplicateCluster": "rdm-1tm8osp",
-      "signalStrength": 75
+      "signalStrength": 6.020599913279624
     },
     {
       "id": "rdm-1tm7xh9",
@@ -1141,7 +1141,7 @@
       "included": true,
       "reason": "Recent post",
       "duplicateCluster": "rdm-1tm7xh9",
-      "signalStrength": 75
+      "signalStrength": 2.40823996531185
     },
     {
       "id": "rdm-1tm7jz1",
@@ -1155,7 +1155,7 @@
       "included": true,
       "reason": "Recent post",
       "duplicateCluster": "rdm-1tm7jz1",
-      "signalStrength": 75
+      "signalStrength": 2.40823996531185
     },
     {
       "id": "rdm-1tm7aq0",
@@ -1169,7 +1169,7 @@
       "included": true,
       "reason": "Recent post",
       "duplicateCluster": "rdm-1tm7aq0",
-      "signalStrength": 75
+      "signalStrength": 2.40823996531185
     },
     {
       "id": "rdp-1r99ked",
@@ -1183,7 +1183,7 @@
       "included": true,
       "reason": "Competitor discussion",
       "duplicateCluster": "rdp-1r99ked",
-      "signalStrength": 80
+      "signalStrength": 43.28705711568874
     },
     {
       "id": "rdp-1s5x88b",
@@ -1197,7 +1197,7 @@
       "included": true,
       "reason": "Competitor discussion",
       "duplicateCluster": "rdp-1s5x88b",
-      "signalStrength": 80
+      "signalStrength": 32.86905352972375
     },
     {
       "id": "rdp-1tcqj3w",
@@ -1211,7 +1211,7 @@
       "included": true,
       "reason": "Competitor discussion",
       "duplicateCluster": "rdp-1tcqj3w",
-      "signalStrength": 80
+      "signalStrength": 41.868433703244705
     },
     {
       "id": "rdp-mfkvj7",
@@ -1225,7 +1225,7 @@
       "included": true,
       "reason": "Competitor discussion",
       "duplicateCluster": "rdp-mfkvj7",
-      "signalStrength": 80
+      "signalStrength": 64.07696927492469
     },
     {
       "id": "rdp-1q6qez7",
@@ -1239,7 +1239,7 @@
       "included": true,
       "reason": "Competitor discussion",
       "duplicateCluster": "rdp-1q6qez7",
-      "signalStrength": 80
+      "signalStrength": 57.46641203630798
     },
     {
       "id": "se-66436008",
@@ -1253,7 +1253,7 @@
       "included": true,
       "reason": "0 score",
       "duplicateCluster": "se-66436008",
-      "signalStrength": 80
+      "signalStrength": 0
     },
     {
       "id": "se-65182836",
@@ -1267,7 +1267,7 @@
       "included": true,
       "reason": "-3 score",
       "duplicateCluster": "se-65182836",
-      "signalStrength": 80
+      "signalStrength": null
     },
     {
       "id": "se-57612123",
@@ -1281,7 +1281,7 @@
       "included": true,
       "reason": "0 score",
       "duplicateCluster": "se-57612123",
-      "signalStrength": 80
+      "signalStrength": 0
     },
     {
       "id": "se-38464788",
@@ -1295,7 +1295,7 @@
       "included": true,
       "reason": "0 score",
       "duplicateCluster": "se-38464788",
-      "signalStrength": 80
+      "signalStrength": 0
     },
     {
       "id": "se-52500918",
@@ -1309,7 +1309,7 @@
       "included": true,
       "reason": "1 score",
       "duplicateCluster": "se-52500918",
-      "signalStrength": 80
+      "signalStrength": 7.52574989159953
     },
     {
       "id": "sea-68589390",
@@ -1323,7 +1323,7 @@
       "included": true,
       "reason": "1 answers",
       "duplicateCluster": "sea-68589390",
-      "signalStrength": 75
+      "signalStrength": 9.030899869919436
     },
     {
       "id": "sea-10210905",
@@ -1337,7 +1337,7 @@
       "included": true,
       "reason": "3 answers",
       "duplicateCluster": "sea-10210905",
-      "signalStrength": 75
+      "signalStrength": 18.06179973983887
     },
     {
       "id": "sea-4220803",
@@ -1351,7 +1351,7 @@
       "included": true,
       "reason": "5 answers",
       "duplicateCluster": "sea-4220803",
-      "signalStrength": 75
+      "signalStrength": 23.34453751150931
     },
     {
       "id": "sep-42442138",
@@ -1365,7 +1365,7 @@
       "included": true,
       "reason": "2274 views",
       "duplicateCluster": "sep-42442138",
-      "signalStrength": 85
+      "signalStrength": 50.35472101489697
     },
     {
       "id": "sep-54356599",
@@ -1379,7 +1379,7 @@
       "included": true,
       "reason": "178 views",
       "duplicateCluster": "sep-54356599",
-      "signalStrength": 85
+      "signalStrength": 33.7927954646984
     },
     {
       "id": "sep-60980397",
@@ -1393,7 +1393,7 @@
       "included": true,
       "reason": "72 views",
       "duplicateCluster": "sep-60980397",
-      "signalStrength": 85
+      "signalStrength": 27.94984290180684
     },
     {
       "id": "sep-55120324",
@@ -1407,7 +1407,7 @@
       "included": true,
       "reason": "288 views",
       "duplicateCluster": "sep-55120324",
-      "signalStrength": 85
+      "signalStrength": 36.91346764134822
     },
     {
       "id": "sep-75031106",
@@ -1421,7 +1421,7 @@
       "included": true,
       "reason": "39 views",
       "duplicateCluster": "sep-75031106",
-      "signalStrength": 85
+      "signalStrength": 24.030899869919438
     },
     {
       "id": "sed-10210905",
@@ -1435,7 +1435,7 @@
       "included": true,
       "reason": "Highly voted",
       "duplicateCluster": "sed-10210905",
-      "signalStrength": 90
+      "signalStrength": 12.041199826559248
     },
     {
       "id": "sed-68589390",
@@ -1449,7 +1449,7 @@
       "included": true,
       "reason": "Highly voted",
       "duplicateCluster": "sed-68589390",
-      "signalStrength": 90
+      "signalStrength": 0
     },
     {
       "id": "sed-4220803",
@@ -1463,7 +1463,7 @@
       "included": true,
       "reason": "Highly voted",
       "duplicateCluster": "sed-4220803",
-      "signalStrength": 90
+      "signalStrength": 0
     },
     {
       "id": "see-atomic",
@@ -1477,7 +1477,7 @@
       "included": true,
       "reason": "Established tag",
       "duplicateCluster": "see-atomic",
-      "signalStrength": 95
+      "signalStrength": 80
     },
     {
       "id": "npm-atomic-state",
@@ -1489,9 +1489,9 @@
       "link": "https://www.npmjs.com/package/atomic-state",
       "metricContribution": "Momentum",
       "included": true,
-      "reason": "Score: 39348",
+      "reason": "Score: 39349",
       "duplicateCluster": "npm-atomic-state",
-      "signalStrength": 80
+      "signalStrength": 100
     },
     {
       "id": "npm-@rbxts/charm",
@@ -1503,9 +1503,9 @@
       "link": "https://www.npmjs.com/package/@rbxts/charm",
       "metricContribution": "Momentum",
       "included": true,
-      "reason": "Score: 28954",
+      "reason": "Score: 28955",
       "duplicateCluster": "npm-@rbxts/charm",
-      "signalStrength": 80
+      "signalStrength": 40
     },
     {
       "id": "npm-@kdeveloper/kvark",
@@ -1519,7 +1519,7 @@
       "included": true,
       "reason": "Score: 24588",
       "duplicateCluster": "npm-@kdeveloper/kvark",
-      "signalStrength": 80
+      "signalStrength": 100
     },
     {
       "id": "npm-@mrpelz/observable",
@@ -1533,7 +1533,7 @@
       "included": true,
       "reason": "Score: 24261",
       "duplicateCluster": "npm-@mrpelz/observable",
-      "signalStrength": 80
+      "signalStrength": 40
     },
     {
       "id": "npm-react-tagged-state",
@@ -1547,7 +1547,7 @@
       "included": true,
       "reason": "Score: 22509",
       "duplicateCluster": "npm-react-tagged-state",
-      "signalStrength": 80
+      "signalStrength": 100
     },
     {
       "id": "npmc-zustand",
@@ -1561,7 +1561,7 @@
       "included": true,
       "reason": "Competitor found",
       "duplicateCluster": "npmc-zustand",
-      "signalStrength": 85
+      "signalStrength": 100
     },
     {
       "id": "npmc-zustand-utils",
@@ -1575,7 +1575,7 @@
       "included": true,
       "reason": "Competitor found",
       "duplicateCluster": "npmc-zustand-utils",
-      "signalStrength": 85
+      "signalStrength": 100
     },
     {
       "id": "npmc-simple-zustand-devtools",
@@ -1589,7 +1589,7 @@
       "included": true,
       "reason": "Competitor found",
       "duplicateCluster": "npmc-simple-zustand-devtools",
-      "signalStrength": 85
+      "signalStrength": 100
     },
     {
       "id": "npmc-zustand-x",
@@ -1603,7 +1603,7 @@
       "included": true,
       "reason": "Competitor found",
       "duplicateCluster": "npmc-zustand-x",
-      "signalStrength": 85
+      "signalStrength": 100
     },
     {
       "id": "npmc-@dhmk/zustand-lens",
@@ -1617,7 +1617,7 @@
       "included": true,
       "reason": "Competitor found",
       "duplicateCluster": "npmc-@dhmk/zustand-lens",
-      "signalStrength": 85
+      "signalStrength": 100
     },
     {
       "id": "npma-unstated-next",
@@ -1631,7 +1631,7 @@
       "included": true,
       "reason": "Active package",
       "duplicateCluster": "npma-unstated-next",
-      "signalStrength": 75
+      "signalStrength": 100
     },
     {
       "id": "npma-@risingstack/react-easy-state",
@@ -1645,7 +1645,7 @@
       "included": true,
       "reason": "Active package",
       "duplicateCluster": "npma-@risingstack/react-easy-state",
-      "signalStrength": 75
+      "signalStrength": 100
     },
     {
       "id": "npma-constate",
@@ -1659,7 +1659,7 @@
       "included": true,
       "reason": "Active package",
       "duplicateCluster": "npma-constate",
-      "signalStrength": 75
+      "signalStrength": 100
     },
     {
       "id": "npma-xsta",
@@ -1673,7 +1673,7 @@
       "included": true,
       "reason": "Active package",
       "duplicateCluster": "npma-xsta",
-      "signalStrength": 75
+      "signalStrength": 40
     },
     {
       "id": "npma-state-decorator",
@@ -1687,7 +1687,7 @@
       "included": true,
       "reason": "Active package",
       "duplicateCluster": "npma-state-decorator",
-      "signalStrength": 75
+      "signalStrength": 100
     },
     {
       "id": "npmd-atomic-state",
@@ -1701,7 +1701,7 @@
       "included": true,
       "reason": "High quality demand",
       "duplicateCluster": "npmd-atomic-state",
-      "signalStrength": 80
+      "signalStrength": 100
     },
     {
       "id": "npmd-@rbxts/charm",
@@ -1715,7 +1715,7 @@
       "included": true,
       "reason": "High quality demand",
       "duplicateCluster": "npmd-@rbxts/charm",
-      "signalStrength": 80
+      "signalStrength": 40
     },
     {
       "id": "npmd-@kdeveloper/kvark",
@@ -1729,7 +1729,7 @@
       "included": true,
       "reason": "High quality demand",
       "duplicateCluster": "npmd-@kdeveloper/kvark",
-      "signalStrength": 80
+      "signalStrength": 100
     },
     {
       "id": "npmd-@mrpelz/observable",
@@ -1743,7 +1743,7 @@
       "included": true,
       "reason": "High quality demand",
       "duplicateCluster": "npmd-@mrpelz/observable",
-      "signalStrength": 80
+      "signalStrength": 40
     },
     {
       "id": "npmd-react-tagged-state",
@@ -1757,7 +1757,7 @@
       "included": true,
       "reason": "High quality demand",
       "duplicateCluster": "npmd-react-tagged-state",
-      "signalStrength": 80
+      "signalStrength": 100
     },
     {
       "id": "npmch-deverhood-react",
@@ -1771,7 +1771,7 @@
       "included": true,
       "reason": "Audience tools",
       "duplicateCluster": "npmch-deverhood-react",
-      "signalStrength": 70
+      "signalStrength": 100
     },
     {
       "id": "npmch-@kasko/fe-toolbelt",
@@ -1785,7 +1785,7 @@
       "included": true,
       "reason": "Audience tools",
       "duplicateCluster": "npmch-@kasko/fe-toolbelt",
-      "signalStrength": 70
+      "signalStrength": 40
     },
     {
       "id": "npmch-cz-salt",
@@ -1799,7 +1799,7 @@
       "included": true,
       "reason": "Audience tools",
       "duplicateCluster": "npmch-cz-salt",
-      "signalStrength": 70
+      "signalStrength": 40
     },
     {
       "id": "npmch-app-scaffold-ci",
@@ -1813,7 +1813,7 @@
       "included": true,
       "reason": "Audience tools",
       "duplicateCluster": "npmch-app-scaffold-ci",
-      "signalStrength": 70
+      "signalStrength": 40
     },
     {
       "id": "npmch-wahab-portfolio",
@@ -1827,7 +1827,7 @@
       "included": true,
       "reason": "Audience tools",
       "duplicateCluster": "npmch-wahab-portfolio",
-      "signalStrength": 70
+      "signalStrength": 40
     },
     {
       "id": "wk-1206",
@@ -1841,7 +1841,7 @@
       "included": true,
       "reason": "Encyclopedia entry",
       "duplicateCluster": "wk-1206",
-      "signalStrength": 90
+      "signalStrength": 75
     },
     {
       "id": "wk-1200",
@@ -1855,7 +1855,7 @@
       "included": true,
       "reason": "Encyclopedia entry",
       "duplicateCluster": "wk-1200",
-      "signalStrength": 90
+      "signalStrength": 75
     },
     {
       "id": "wk-60033",
@@ -1869,7 +1869,21 @@
       "included": true,
       "reason": "Encyclopedia entry",
       "duplicateCluster": "wk-60033",
-      "signalStrength": 90
+      "signalStrength": 30
+    },
+    {
+      "id": "wk-19604151",
+      "source": "Wikipedia",
+      "sourceType": "article",
+      "date": "2026-05-02",
+      "query": "atomic state",
+      "snippet": "Atomic mass",
+      "link": "https://en.wikipedia.org/?curid=19604151",
+      "metricContribution": "Evidence Quality",
+      "included": true,
+      "reason": "Encyclopedia entry",
+      "duplicateCluster": "wk-19604151",
+      "signalStrength": 75
     },
     {
       "id": "wk-11778948",
@@ -1883,21 +1897,7 @@
       "included": true,
       "reason": "Encyclopedia entry",
       "duplicateCluster": "wk-11778948",
-      "signalStrength": 90
-    },
-    {
-      "id": "wk-337775",
-      "source": "Wikipedia",
-      "sourceType": "article",
-      "date": "2026-05-06",
-      "query": "atomic state",
-      "snippet": "Nuclear weapons testing",
-      "link": "https://en.wikipedia.org/?curid=337775",
-      "metricContribution": "Evidence Quality",
-      "included": true,
-      "reason": "Encyclopedia entry",
-      "duplicateCluster": "wk-337775",
-      "signalStrength": 90
+      "signalStrength": 75
     },
     {
       "id": "wkm-1206",
@@ -1911,7 +1911,7 @@
       "included": true,
       "reason": "Wiki tracking",
       "duplicateCluster": "wkm-1206",
-      "signalStrength": 70
+      "signalStrength": 60
     },
     {
       "id": "wkm-1200",
@@ -1925,7 +1925,7 @@
       "included": true,
       "reason": "Wiki tracking",
       "duplicateCluster": "wkm-1200",
-      "signalStrength": 70
+      "signalStrength": 60
     },
     {
       "id": "wkm-60033",
@@ -1939,7 +1939,7 @@
       "included": true,
       "reason": "Wiki tracking",
       "duplicateCluster": "wkm-60033",
-      "signalStrength": 70
+      "signalStrength": 24
     },
     {
       "id": "wkm-11778948",
@@ -1953,7 +1953,7 @@
       "included": true,
       "reason": "Wiki tracking",
       "duplicateCluster": "wkm-11778948",
-      "signalStrength": 70
+      "signalStrength": 60
     },
     {
       "id": "wkm-337775",
@@ -1967,7 +1967,7 @@
       "included": true,
       "reason": "Wiki tracking",
       "duplicateCluster": "wkm-337775",
-      "signalStrength": 70
+      "signalStrength": 24
     },
     {
       "id": "wkc-71626238",
@@ -1981,7 +1981,7 @@
       "included": true,
       "reason": "Audience defined",
       "duplicateCluster": "wkc-71626238",
-      "signalStrength": 75
+      "signalStrength": 65
     },
     {
       "id": "wkc-71890151",
@@ -1995,7 +1995,7 @@
       "included": true,
       "reason": "Audience defined",
       "duplicateCluster": "wkc-71890151",
-      "signalStrength": 75
+      "signalStrength": 26
     },
     {
       "id": "wkc-654611",
@@ -2009,7 +2009,7 @@
       "included": true,
       "reason": "Audience defined",
       "duplicateCluster": "wkc-654611",
-      "signalStrength": 75
+      "signalStrength": 26
     },
     {
       "id": "wkc-428625",
@@ -2023,7 +2023,7 @@
       "included": true,
       "reason": "Audience defined",
       "duplicateCluster": "wkc-428625",
-      "signalStrength": 75
+      "signalStrength": 26
     },
     {
       "id": "wkc-460187",
@@ -2037,7 +2037,7 @@
       "included": true,
       "reason": "Audience defined",
       "duplicateCluster": "wkc-460187",
-      "signalStrength": 75
+      "signalStrength": 65
     },
     {
       "id": "wkp-23277715",
@@ -2051,7 +2051,7 @@
       "included": true,
       "reason": "Competitor wiki",
       "duplicateCluster": "wkp-23277715",
-      "signalStrength": 85
+      "signalStrength": 28
     },
     {
       "id": "wkp-21476593",
@@ -2065,7 +2065,7 @@
       "included": true,
       "reason": "Competitor wiki",
       "duplicateCluster": "wkp-21476593",
-      "signalStrength": 85
+      "signalStrength": 28
     },
     {
       "id": "wkp-7618448",
@@ -2079,7 +2079,7 @@
       "included": true,
       "reason": "Competitor wiki",
       "duplicateCluster": "wkp-7618448",
-      "signalStrength": 85
+      "signalStrength": 28
     },
     {
       "id": "wkp-80239539",
@@ -2093,7 +2093,7 @@
       "included": true,
       "reason": "Competitor wiki",
       "duplicateCluster": "wkp-80239539",
-      "signalStrength": 85
+      "signalStrength": 70
     },
     {
       "id": "wkp-21574559",
@@ -2107,7 +2107,7 @@
       "included": true,
       "reason": "Competitor wiki",
       "duplicateCluster": "wkp-21574559",
-      "signalStrength": 85
+      "signalStrength": 28
     },
     {
       "id": "wka-44926137",
@@ -2121,7 +2121,7 @@
       "included": true,
       "reason": "Problem activity",
       "duplicateCluster": "wka-44926137",
-      "signalStrength": 60
+      "signalStrength": 50
     },
     {
       "id": "wka-360889",
@@ -2135,7 +2135,7 @@
       "included": true,
       "reason": "Problem activity",
       "duplicateCluster": "wka-360889",
-      "signalStrength": 60
+      "signalStrength": 50
     },
     {
       "id": "wka-3042574",
@@ -2149,7 +2149,7 @@
       "included": true,
       "reason": "Problem activity",
       "duplicateCluster": "wka-3042574",
-      "signalStrength": 60
+      "signalStrength": 50
     },
     {
       "id": "wka-48720974",
@@ -2163,7 +2163,7 @@
       "included": true,
       "reason": "Problem activity",
       "duplicateCluster": "wka-48720974",
-      "signalStrength": 60
+      "signalStrength": 50
     },
     {
       "id": "wka-9087364",
@@ -2177,7 +2177,7 @@
       "included": true,
       "reason": "Problem activity",
       "duplicateCluster": "wka-9087364",
-      "signalStrength": 60
+      "signalStrength": 50
     },
     {
       "id": "as-1080930585",
@@ -2191,7 +2191,7 @@
       "included": true,
       "reason": "Existing competitor",
       "duplicateCluster": "as-1080930585",
-      "signalStrength": 90
+      "signalStrength": 36.19797225841157
     },
     {
       "id": "as-1449371501",
@@ -2205,7 +2205,7 @@
       "included": true,
       "reason": "Existing competitor",
       "duplicateCluster": "as-1449371501",
-      "signalStrength": 90
+      "signalStrength": 3.8169700377572995
     },
     {
       "id": "as-506637498",
@@ -2219,7 +2219,7 @@
       "included": true,
       "reason": "Existing competitor",
       "duplicateCluster": "as-506637498",
-      "signalStrength": 90
+      "signalStrength": 3.8169700377572995
     },
     {
       "id": "as-418896804",
@@ -2233,7 +2233,7 @@
       "included": true,
       "reason": "Existing competitor",
       "duplicateCluster": "as-418896804",
-      "signalStrength": 90
+      "signalStrength": 0
     },
     {
       "id": "as-731391253",
@@ -2247,7 +2247,7 @@
       "included": true,
       "reason": "Existing competitor",
       "duplicateCluster": "as-731391253",
-      "signalStrength": 90
+      "signalStrength": 0
     },
     {
       "id": "asm-953603155",
@@ -2261,7 +2261,7 @@
       "included": true,
       "reason": "Solution exists",
       "duplicateCluster": "asm-953603155",
-      "signalStrength": 75
+      "signalStrength": 21.159586254620713
     },
     {
       "id": "asm-509546625",
@@ -2275,7 +2275,7 @@
       "included": true,
       "reason": "Solution exists",
       "duplicateCluster": "asm-509546625",
-      "signalStrength": 75
+      "signalStrength": 14.888655771013829
     },
     {
       "id": "asm-403391202",
@@ -2289,7 +2289,7 @@
       "included": true,
       "reason": "Solution exists",
       "duplicateCluster": "asm-403391202",
-      "signalStrength": 75
+      "signalStrength": 14.313637641589873
     },
     {
       "id": "asm-6676996063",
@@ -2303,7 +2303,7 @@
       "included": true,
       "reason": "Solution exists",
       "duplicateCluster": "asm-6676996063",
-      "signalStrength": 75
+      "signalStrength": 15.27925598086879
     },
     {
       "id": "asp-1777244053",
@@ -2317,7 +2317,7 @@
       "included": true,
       "reason": "Podcast discussion",
       "duplicateCluster": "asp-1777244053",
-      "signalStrength": 80
+      "signalStrength": 0
     },
     {
       "id": "asp-1605165034",
@@ -2331,7 +2331,7 @@
       "included": true,
       "reason": "Podcast discussion",
       "duplicateCluster": "asp-1605165034",
-      "signalStrength": 80
+      "signalStrength": 0
     },
     {
       "id": "asp-1253186678",
@@ -2345,7 +2345,7 @@
       "included": true,
       "reason": "Podcast discussion",
       "duplicateCluster": "asp-1253186678",
-      "signalStrength": 80
+      "signalStrength": 0
     },
     {
       "id": "asp-1364741140",
@@ -2359,7 +2359,7 @@
       "included": true,
       "reason": "Podcast discussion",
       "duplicateCluster": "asp-1364741140",
-      "signalStrength": 80
+      "signalStrength": 0
     },
     {
       "id": "asd-1383780486",
@@ -2373,7 +2373,7 @@
       "included": true,
       "reason": "Audience apps",
       "duplicateCluster": "asd-1383780486",
-      "signalStrength": 85
+      "signalStrength": 50.500896140736906
     },
     {
       "id": "asd-6742056277",
@@ -2387,7 +2387,7 @@
       "included": true,
       "reason": "Audience apps",
       "duplicateCluster": "asd-6742056277",
-      "signalStrength": 85
+      "signalStrength": 0
     },
     {
       "id": "asd-640199958",
@@ -2401,7 +2401,7 @@
       "included": true,
       "reason": "Audience apps",
       "duplicateCluster": "asd-640199958",
-      "signalStrength": 85
+      "signalStrength": 66.36961450349035
     },
     {
       "id": "asd-1553722819",
@@ -2415,7 +2415,7 @@
       "included": true,
       "reason": "Audience apps",
       "duplicateCluster": "asd-1553722819",
-      "signalStrength": 85
+      "signalStrength": 15.563025007672874
     },
     {
       "id": "asd-1530690508",
@@ -2429,7 +2429,7 @@
       "included": true,
       "reason": "Audience apps",
       "duplicateCluster": "asd-1530690508",
-      "signalStrength": 85
+      "signalStrength": 12.041199826559248
     },
     {
       "id": "ase-1555031492",
@@ -2443,7 +2443,7 @@
       "included": true,
       "reason": "Published book",
       "duplicateCluster": "ase-1555031492",
-      "signalStrength": 95
+      "signalStrength": 0
     },
     {
       "id": "ase-1604405874",
@@ -2457,7 +2457,7 @@
       "included": true,
       "reason": "Published book",
       "duplicateCluster": "ase-1604405874",
-      "signalStrength": 95
+      "signalStrength": 0
     },
     {
       "id": "ase-615233367",
@@ -2471,7 +2471,7 @@
       "included": true,
       "reason": "Published book",
       "duplicateCluster": "ase-615233367",
-      "signalStrength": 95
+      "signalStrength": 0
     },
     {
       "id": "ase-1617368029",
@@ -2485,7 +2485,7 @@
       "included": true,
       "reason": "Published book",
       "duplicateCluster": "ase-1617368029",
-      "signalStrength": 95
+      "signalStrength": 0
     },
     {
       "id": "ase-1474500117",
@@ -2499,20 +2499,20 @@
       "included": true,
       "reason": "Published book",
       "duplicateCluster": "ase-1474500117",
-      "signalStrength": 95
+      "signalStrength": 0
     }
   ],
   "strongestPillar": {
+    "key": "demand",
+    "label": "Demand",
+    "score": 100,
+    "note": "Demand reads public-search targets for \"react state management\" across free sources."
+  },
+  "weakestPillar": {
     "key": "evidenceQuality",
     "label": "Evidence Quality",
     "score": 93,
     "note": "Evidence Quality rewards source diversity, exclusions, and query specificity."
-  },
-  "weakestPillar": {
-    "key": "activity",
-    "label": "Activity",
-    "score": 75,
-    "note": "Activity reads builder and package signals around \"atomic state\"."
   },
   "interpretation": "Public evidence supports deeper validation. Pain appears strong, while activity data remains thinner.",
   "disclaimer": "This score reflects public evidence found through selected sources and queries. It is not a prediction of success, customer willingness to pay, or product quality."

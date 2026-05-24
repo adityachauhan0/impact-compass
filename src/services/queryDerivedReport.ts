@@ -32,19 +32,29 @@ function sourceTermScore(termCount: number, bonus: number) {
   return clamp(38 + termCount * 11 + bonus);
 }
 
-function average(values: number[]) {
+function aggregateVolumeWeighted(values: number[]) {
   if (values.length === 0) {
     return 0;
   }
 
-  return clamp(values.reduce((sum, value) => sum + value, 0) / values.length);
+  // Sort descending to get the highest quality signals first
+  const sorted = [...values].sort((a, b) => b - a);
+  
+  // Take average of top 3 (or fewer if we have less)
+  const topSignals = sorted.slice(0, 3);
+  const baseAverage = topSignals.reduce((sum, val) => sum + val, 0) / topSignals.length;
+  
+  // Apply a volume bonus for every additional piece of evidence (+2 points per item)
+  const volumeBonus = (values.length > 3 ? (values.length - 3) * 2 : 0);
+  
+  return clamp(baseAverage + volumeBonus);
 }
 
 function scoreByContribution(
   evidence: EvidenceItem[],
   contribution: MetricContribution,
 ) {
-  return average(
+  return aggregateVolumeWeighted(
     evidence
       .filter((item) => item.included && item.metricContribution === contribution)
       .map((item) => item.signalStrength),
