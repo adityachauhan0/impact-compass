@@ -13,13 +13,19 @@ npx impact-compass idea.json output.json
 
 [Documentation](DOCUMENTATION.md) / [Agent Skill Guide](SKILLS.md)
 
-A purely statistical, deterministic project idea validator and market research CLI.
+A purely statistical, deterministic startup idea validator and market research CLI for founders, indie hackers, builders, and developer-tool maniacs.
 
-Impact Compass fetches keyword rankings and engagement signals from real sources like GitHub, npm, Reddit, Stack Exchange, Hacker News, Wikipedia, and the App Store. It checks the *hype* around your project before you waste six months, a billion tokens, and enough coffee to make your keyboard anxious.
+Impact Compass runs product-market fit checks, demand validation, competitive analysis, and market saturation scoring from public evidence. It fetches keyword rankings and engagement signals from real sources like GitHub, npm, Reddit, Stack Exchange, Hacker News, Wikipedia, and the App Store. It checks the *hype* around your project before you waste six months, a billion tokens, and enough coffee to make your keyboard anxious.
 
 No AI. No vibes. No GPT wrapper whispering "*yo this idea is goated*" right before it lies to your face and stabs you in the roadmap.
 
-Impact Compass is a deterministic engine. It pulls live, real-world evidence through an API-based keyword scoring pipeline, then runs that data through a brutal scoring engine to tell you if you found a blue ocean or if you are walking into another brilliant project that nobody wants.
+Impact Compass is a deterministic validation engine. It pulls live, real-world evidence through an API-based keyword scoring pipeline, then runs that data through a brutal scoring engine to tell you if you found a blue ocean or if you are walking into another brilliant project that nobody wants.
+
+Built for:
+- founders doing startup validation before writing code
+- indie hackers checking if a niche has actual demand
+- developers comparing saturated markets before shipping another clone
+- AI coding agents that need real market evidence before they start generating files like caffeinated interns
 
 ## Watch It Judge
 
