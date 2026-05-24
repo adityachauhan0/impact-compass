@@ -42,4 +42,15 @@ describe("CompassReport", () => {
     expect(screen.queryByText(/bad idea/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/guaranteed/i)).not.toBeInTheDocument();
   });
+
+  it("renders formula transparency for pillar scores", () => {
+    render(<CompassReport report={createDemoReport()} />);
+
+    expect(screen.getByText("Formula Readout")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "0.45 volume + 0.25 unique authors + 0.20 questions + 0.10 engagement",
+      ),
+    ).toBeInTheDocument();
+  });
 });

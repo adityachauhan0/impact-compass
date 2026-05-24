@@ -18,7 +18,7 @@ describe("demo report fixture", () => {
   it("keeps evidence ledger entries auditable", () => {
     const report = createDemoReport();
 
-    expect(report.evidence).toHaveLength(6);
+    expect(report.evidence).toHaveLength(12);
     expect(report.evidence.some((item) => item.included)).toBe(true);
     expect(report.evidence.some((item) => !item.included)).toBe(true);
     expect(report.evidence[0]).toMatchObject({

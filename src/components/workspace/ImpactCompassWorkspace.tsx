@@ -1,37 +1,114 @@
 "use client";
 
 import { Lock, Radar, RotateCcw } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { ComparisonTable } from "../comparison/ComparisonTable";
+import { SavedReports } from "../history/SavedReports";
 import { CompassReport } from "../report/CompassReport";
-import { createDemoReport } from "../../services/demoReport";
+import { createLockedQueryBundle, evaluateQueryQuality } from "../../domain/queryBundle";
+import { defaultIdea, defaultQueryForm } from "../../services/demoReport";
+import { buildSnapshotComparisonRows } from "../../services/comparison";
+import { buildCompassReport } from "../../services/reportBuilder";
+import type { CompassReportModel } from "../../services/reportTypes";
+import {
+  listReportSnapshots,
+  saveReportSnapshot,
+  type ReportSnapshot,
+} from "../../services/reportStorage";
+import { therapyEvidenceSeed, therapyPillarScores } from "../../services/therapySeed";
 
 const fieldClass =
   "mt-2 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-950 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-100";
 
-function join(values: string[]) {
-  return values.join(", ");
+function getBrowserStorage() {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
 }
 
 export function ImpactCompassWorkspace() {
-  const report = useMemo(() => createDemoReport(), []);
-  const [locked, setLocked] = useState(false);
-  const [ideaName, setIdeaName] = useState(report.idea.name);
-  const [problem, setProblem] = useState(report.idea.problem);
-  const [targetUser, setTargetUser] = useState(report.idea.targetUser);
-  const [lens, setLens] = useState(report.idea.lens);
-  const [problemKeywords, setProblemKeywords] = useState(
-    join(report.queryBundle.problemKeywords),
-  );
+  const [lockedReport, setLockedReport] = useState<CompassReportModel | null>(null);
+  const [savedReports, setSavedReports] = useState<ReportSnapshot[]>([]);
+  const [ideaName, setIdeaName] = useState(defaultIdea.name);
+  const [problem, setProblem] = useState(defaultIdea.problem);
+  const [targetUser, setTargetUser] = useState(defaultIdea.targetUser);
+  const [lens, setLens] = useState(defaultIdea.lens);
+  const [problemKeywords, setProblemKeywords] = useState(defaultQueryForm.problemKeywords);
   const [solutionKeywords, setSolutionKeywords] = useState(
-    join(report.queryBundle.solutionKeywords),
+    defaultQueryForm.solutionKeywords,
   );
   const [audienceKeywords, setAudienceKeywords] = useState(
-    join(report.queryBundle.audienceKeywords),
+    defaultQueryForm.audienceKeywords,
   );
   const [competitorKeywords, setCompetitorKeywords] = useState(
-    join(report.queryBundle.competitorKeywords),
+    defaultQueryForm.competitorKeywords,
   );
-  const [exclusions, setExclusions] = useState(join(report.queryBundle.exclusions));
+  const [exclusions, setExclusions] = useState(defaultQueryForm.exclusions);
+  const locked = lockedReport !== null;
+  const queryForm = useMemo(
+    () => ({
+      problemKeywords,
+      solutionKeywords,
+      audienceKeywords,
+      competitorKeywords,
+      exclusions,
+    }),
+    [
+      audienceKeywords,
+      competitorKeywords,
+      exclusions,
+      problemKeywords,
+      solutionKeywords,
+    ],
+  );
+  const previewQueryBundle = useMemo(
+    () => createLockedQueryBundle(queryForm),
+    [queryForm],
+  );
+  const queryQuality = evaluateQueryQuality(previewQueryBundle);
+  const comparisonRows = buildSnapshotComparisonRows(savedReports);
+
+  useEffect(() => {
+    const storage = getBrowserStorage();
+
+    if (storage) {
+      const frameId = window.requestAnimationFrame(() => {
+        setSavedReports(listReportSnapshots(storage));
+      });
+
+      return () => window.cancelAnimationFrame(frameId);
+    }
+  }, []);
+
+  function lockQueryBundle() {
+    const report = buildCompassReport({
+      idea: {
+        name: ideaName,
+        problem,
+        targetUser,
+        lens,
+      },
+      queryBundle: previewQueryBundle,
+      evidence: therapyEvidenceSeed,
+      pillarScores: therapyPillarScores,
+      uncertainty: 11,
+    });
+
+    setLockedReport(report);
+
+    const storage = getBrowserStorage();
+
+    if (storage) {
+      saveReportSnapshot(storage, report);
+      setSavedReports(listReportSnapshots(storage));
+    }
+  }
 
   return (
     <main className="min-h-screen bg-slate-100 text-slate-950">
@@ -163,11 +240,11 @@ export function ImpactCompassWorkspace() {
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-semibold text-emerald-950">Query quality</span>
                   <span className="rounded-full bg-white px-2 py-1 text-xs font-semibold text-emerald-800">
-                    Strong
+                    {queryQuality.label}
                   </span>
                 </div>
                 <p className="mt-2 leading-5 text-emerald-900">
-                  Ambiguity controlled with mental-health audience terms and physical-therapy exclusions.
+                  {queryQuality.warning}
                 </p>
               </div>
 
@@ -175,7 +252,7 @@ export function ImpactCompassWorkspace() {
                 <button
                   type="button"
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:bg-slate-300"
-                  onClick={() => setLocked(true)}
+                  onClick={lockQueryBundle}
                   disabled={locked}
                 >
                   <Lock size={16} aria-hidden="true" />
@@ -184,18 +261,22 @@ export function ImpactCompassWorkspace() {
                 <button
                   type="button"
                   className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-3 text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
-                  onClick={() => setLocked(false)}
+                  onClick={() => setLockedReport(null)}
                   aria-label="Unlock query bundle"
                 >
                   <RotateCcw size={16} aria-hidden="true" />
                 </button>
               </div>
             </div>
+            <SavedReports snapshots={savedReports} />
           </aside>
 
           <div className="min-w-0">
-            {locked ? (
-              <CompassReport report={report} />
+            {lockedReport ? (
+              <div className="space-y-5">
+                <CompassReport report={lockedReport} />
+                <ComparisonTable rows={comparisonRows} />
+              </div>
             ) : (
               <div className="flex min-h-[520px] items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center shadow-sm">
                 <div className="max-w-md">

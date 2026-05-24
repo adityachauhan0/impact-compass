@@ -1,8 +1,8 @@
 import { ExternalLink } from "lucide-react";
-import type { DemoReport, PillarSummary } from "../../services/demoReport";
+import type { CompassReportModel, PillarSummary } from "../../services/reportTypes";
 
 type CompassReportProps = {
-  report: DemoReport;
+  report: CompassReportModel;
 };
 
 function CompassRadar({ pillars }: { pillars: PillarSummary[] }) {
@@ -111,6 +111,37 @@ export function CompassReport({ report }: CompassReportProps) {
         </div>
       </div>
 
+      <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+        <h3 className="text-base font-semibold text-slate-950">Measured Query Bundle</h3>
+        <div className="mt-4 grid gap-4 text-sm md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <p className="text-xs font-semibold uppercase text-slate-400">Problem</p>
+            <p className="mt-1 text-slate-700">{report.queryBundle.problemKeywords.join(", ")}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase text-slate-400">Solution</p>
+            <p className="mt-1 text-slate-700">{report.queryBundle.solutionKeywords.join(", ")}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase text-slate-400">Audience</p>
+            <p className="mt-1 text-slate-700">{report.queryBundle.audienceKeywords.join(", ")}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase text-slate-400">Competitors</p>
+            <p className="mt-1 text-slate-700">{report.queryBundle.competitorKeywords.join(", ")}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase text-slate-400">Exclusions</p>
+            <p className="mt-1 text-slate-700">{report.queryBundle.exclusions.join(", ")}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase text-slate-400">Quality</p>
+            <p className="mt-1 font-medium text-slate-950">{report.queryQuality.label}</p>
+            <p className="mt-1 text-slate-600">{report.queryQuality.warning}</p>
+          </div>
+        </div>
+      </div>
+
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(300px,0.8fr)]">
         <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
           <div className="border-b border-slate-200 px-5 py-4">
@@ -162,6 +193,26 @@ export function CompassReport({ report }: CompassReportProps) {
           <p className="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm leading-5 text-amber-950">
             {report.disclaimer}
           </p>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
+        <div className="border-b border-slate-200 px-5 py-4">
+          <h3 className="text-base font-semibold text-slate-950">Formula Readout</h3>
+        </div>
+        <div className="grid gap-px bg-slate-100 md:grid-cols-2">
+          {report.formulas.map((formula) => (
+            <div key={formula.pillar} className="bg-white p-5">
+              <div className="flex items-center justify-between gap-4">
+                <h4 className="font-semibold text-slate-950">{formula.pillar}</h4>
+                <span className="text-lg font-semibold text-slate-950">{formula.score}</span>
+              </div>
+              <p className="mt-2 text-sm leading-5 text-slate-700">{formula.formula}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-500">
+                Inputs: {formula.inputs.join(", ")}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 

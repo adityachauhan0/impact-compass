@@ -20,13 +20,15 @@ npm run lint
 npm run build
 ```
 
-## First Slice
+## First Production Slice
 
 - Next.js App Router with TypeScript.
 - Deterministic scoring core with unit tests.
-- Demo report fixture service.
-- Interactive idea brief and query bundle lock flow.
-- Seven-pillar Compass graph and Evidence Ledger.
+- Interactive idea brief and locked query bundle flow.
+- Seven-pillar Compass graph, formula readout, and Evidence Ledger.
+- Lower-confidence-bound comparison table for idea alternatives.
+- Local report snapshots in browser storage.
+- Free-source adapter skeletons for GitHub and Hacker News.
 
 ## Trust Rule
 

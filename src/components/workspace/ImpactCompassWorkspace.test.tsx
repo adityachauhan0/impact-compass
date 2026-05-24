@@ -29,5 +29,22 @@ describe("ImpactCompassWorkspace", () => {
 
     expect(screen.getByText("Evidence Ledger")).toBeInTheDocument();
     expect(screen.getByText("Locked v1")).toBeInTheDocument();
+    expect(screen.getByText("Comparison")).toBeInTheDocument();
+    expect(screen.getByText("Saved reports")).toBeInTheDocument();
+  });
+
+  it("generates the report from edited idea fields", () => {
+    render(<ImpactCompassWorkspace />);
+
+    fireEvent.change(screen.getByLabelText("Idea name"), {
+      target: { value: "Invoice follow-up autopilot" },
+    });
+    fireEvent.change(screen.getByLabelText("Problem keywords"), {
+      target: { value: "late client payments, chasing invoices" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /^lock query bundle$/i }));
+
+    expect(screen.getByText("Invoice follow-up autopilot")).toBeInTheDocument();
+    expect(screen.getAllByText(/late client payments/).length).toBeGreaterThan(0);
   });
 });
