@@ -20,6 +20,7 @@ export type FormulaReadout = {
   pillar: string;
   score: number;
   formula: string;
+  formulaLatex: string;
   inputs: string[];
 };
 

@@ -40,38 +40,52 @@ const formulas: Omit<FormulaReadout, "score">[] = [
   {
     pillar: "Demand",
     formula: "0.45 volume + 0.25 unique authors + 0.20 questions + 0.10 engagement",
+    formulaLatex:
+      "0.45V + 0.25A_u + 0.20Q_i + 0.10E_p",
     inputs: ["mention volume", "unique authors", "question intent", "engagement percentile"],
   },
   {
     pillar: "Pain",
     formula:
       "0.35 pain density + 0.25 workaround density + 0.20 alternative density + 0.20 discussion depth",
+    formulaLatex:
+      "0.35D_p + 0.25D_w + 0.20D_a + 0.20D_d",
     inputs: ["pain phrases", "workarounds", "alternative seeking", "discussion depth"],
   },
   {
     pillar: "Momentum",
     formula: "0.40 short growth + 0.30 medium growth + 0.20 sustained growth - 0.10 spike penalty",
+    formulaLatex:
+      "0.40G_{30} + 0.30G_{90} + 0.20G_s - 0.10P_{spike}",
     inputs: ["30-day rate", "90-day rate", "sustained trend", "spike penalty"],
   },
   {
     pillar: "Competition Fit",
     formula: "100 * exp(-((supply percentile - 60)^2) / (2 * 25^2))",
+    formulaLatex:
+      "100e^{-\\frac{(P_s - 60)^2}{2 \\cdot 25^2}}",
     inputs: ["competitor count", "launch count", "repo/package supply", "saturation penalty"],
   },
   {
     pillar: "Activity",
     formula: "weighted available activity signals; non-relevant missing metrics excluded",
+    formulaLatex:
+      "\\frac{\\sum w_i s_i}{\\sum w_i}",
     inputs: ["repo activity", "package activity", "launch recency", "discussion freshness"],
   },
   {
     pillar: "Channel Fit",
     formula: "0.35 concentration + 0.25 community count + 0.25 engagement + 0.15 lens match",
+    formulaLatex:
+      "0.35C_s + 0.25C_n + 0.25E_c + 0.15L_m",
     inputs: ["source concentration", "community count", "top channel engagement", "lens match"],
   },
   {
     pillar: "Evidence Quality",
     formula:
       "0.25 source diversity + 0.20 sample size + 0.20 precision + 0.15 ambiguity inverse + 0.10 duplicate inverse + 0.10 recency coverage",
+    formulaLatex:
+      "0.25D_s + 0.20N + 0.20R_p + 0.15A_i + 0.10D_i + 0.10R_c",
     inputs: ["source diversity", "sample size", "precision", "ambiguity", "duplicates", "recency"],
   },
 ];

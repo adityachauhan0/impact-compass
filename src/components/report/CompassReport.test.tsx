@@ -17,6 +17,8 @@ describe("CompassReport", () => {
     expect(screen.getByText("+/- 11")).toBeInTheDocument();
     expect(screen.getByText("Medium confidence")).toBeInTheDocument();
     expect(screen.getByText("Methodology v0.1")).toBeInTheDocument();
+    expect(screen.getByText("Signal readout")).toBeInTheDocument();
+    expect(screen.getByText("Evidence health")).toBeInTheDocument();
   });
 
   it("renders all seven pillars and evidence ledger entries", () => {
@@ -30,6 +32,21 @@ describe("CompassReport", () => {
     expect(screen.getAllByText("Channel Fit").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Evidence Quality").length).toBeGreaterThan(0);
     expect(screen.getByText("Physical therapy treatment notes workflow discussion.")).toBeInTheDocument();
+    expect(screen.getByText("Included evidence")).toBeInTheDocument();
+    expect(screen.getByText("Excluded evidence")).toBeInTheDocument();
+  });
+
+  it("keeps dense analysis panels scrollable within the report scene", () => {
+    render(<CompassReport report={createDemoReport()} />);
+
+    expect(screen.getByLabelText("Seven pillars scroll area")).toHaveClass(
+      "max-h-[30rem]",
+      "overflow-y-auto",
+    );
+    expect(screen.getByLabelText("Evidence ledger scroll area")).toHaveClass(
+      "max-h-[30rem]",
+      "overflow-auto",
+    );
   });
 
   it("uses trust-safe report language", () => {
@@ -47,6 +64,7 @@ describe("CompassReport", () => {
     render(<CompassReport report={createDemoReport()} />);
 
     expect(screen.getByText("Formula Readout")).toBeInTheDocument();
+    expect(screen.getByLabelText("Demand formula rendered as math")).toBeInTheDocument();
     expect(
       screen.getByText(
         "0.45 volume + 0.25 unique authors + 0.20 questions + 0.10 engagement",
