@@ -8,6 +8,11 @@ import { CompassReport } from "../report/CompassReport";
 import { createLockedQueryBundle, evaluateQueryQuality } from "../../domain/queryBundle";
 import { defaultIdea, defaultQueryForm } from "../../services/demoReport";
 import { buildSnapshotComparisonRows } from "../../services/comparison";
+import {
+  createQueryDerivedEvidence,
+  derivePillarScoresFromEvidence,
+  deriveUncertainty,
+} from "../../services/queryDerivedReport";
 import { buildCompassReport } from "../../services/reportBuilder";
 import type { CompassReportModel } from "../../services/reportTypes";
 import {
@@ -15,7 +20,6 @@ import {
   saveReportSnapshot,
   type ReportSnapshot,
 } from "../../services/reportStorage";
-import { therapyEvidenceSeed, therapyPillarScores } from "../../services/therapySeed";
 
 const fieldClass =
   "mt-2 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-950 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-100";
@@ -87,17 +91,19 @@ export function ImpactCompassWorkspace() {
   }, []);
 
   function lockQueryBundle() {
+    const idea = {
+      name: ideaName,
+      problem,
+      targetUser,
+      lens,
+    };
+    const evidence = createQueryDerivedEvidence(idea, previewQueryBundle);
     const report = buildCompassReport({
-      idea: {
-        name: ideaName,
-        problem,
-        targetUser,
-        lens,
-      },
+      idea,
       queryBundle: previewQueryBundle,
-      evidence: therapyEvidenceSeed,
-      pillarScores: therapyPillarScores,
-      uncertainty: 11,
+      evidence,
+      pillarScores: derivePillarScoresFromEvidence(evidence),
+      uncertainty: deriveUncertainty(previewQueryBundle),
     });
 
     setLockedReport(report);

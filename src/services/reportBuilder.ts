@@ -36,16 +36,6 @@ const pillarLabels: Record<keyof PillarScores, string> = {
   evidenceQuality: "Evidence Quality",
 };
 
-const pillarNotes: Record<keyof PillarScores, string> = {
-  demand: "Moderate recurring discussion across reachable public sources.",
-  pain: "Strong repeated language around paperwork burden and after-hours notes.",
-  momentum: "Stable interest, not an obvious one-day hype spike.",
-  competitionFit: "Existing tools prove category, but specialist positioning still matters.",
-  activity: "Some tool activity, but not an intense open-source ecosystem.",
-  channelFit: "Clear communities exist for therapist and private-practice validation.",
-  evidenceQuality: "Good pain matches with some ambiguity around medical documentation.",
-};
-
 const formulas: Omit<FormulaReadout, "score">[] = [
   {
     pillar: "Demand",
@@ -86,11 +76,37 @@ const formulas: Omit<FormulaReadout, "score">[] = [
   },
 ];
 
-function createPillars(pillarScores: PillarScores): PillarSummary[] {
-  return (Object.keys(pillarScores) as Array<keyof PillarScores>).map((key) => ({
+function firstTerm(terms: string[], fallback: string) {
+  return terms[0] ?? fallback;
+}
+
+function createPillarNotes(input: BuildCompassReportInput): Record<keyof PillarScores, string> {
+  const problem = firstTerm(input.queryBundle.problemKeywords, input.idea.problem);
+  const solution = firstTerm(input.queryBundle.solutionKeywords, input.idea.name);
+  const audience = firstTerm(input.queryBundle.audienceKeywords, input.idea.targetUser);
+  const competitor = firstTerm(
+    input.queryBundle.competitorKeywords,
+    `${input.idea.name} alternatives`,
+  );
+
+  return {
+    demand: `Demand reads public-search targets for "${problem}" across free sources.`,
+    pain: `Pain reads workaround and complaint language around "${problem}".`,
+    momentum: `Momentum reads recent public activity around "${solution}".`,
+    competitionFit: `Competition Fit compares visible alternatives such as "${competitor}".`,
+    activity: `Activity reads builder and package signals around "${solution}".`,
+    channelFit: `Channel Fit checks whether "${audience}" has reachable public communities.`,
+    evidenceQuality: "Evidence Quality rewards source diversity, exclusions, and query specificity.",
+  };
+}
+
+function createPillars(input: BuildCompassReportInput): PillarSummary[] {
+  const pillarNotes = createPillarNotes(input);
+
+  return (Object.keys(input.pillarScores) as Array<keyof PillarScores>).map((key) => ({
     key,
     label: pillarLabels[key],
-    score: pillarScores[key],
+    score: input.pillarScores[key],
     note: pillarNotes[key],
   }));
 }
@@ -124,7 +140,7 @@ export function buildCompassReport(
   const score = calculateCompassScore(input.pillarScores, {
     uncertainty: input.uncertainty ?? 10,
   });
-  const pillars = createPillars(input.pillarScores);
+  const pillars = createPillars(input);
   const strongestPillar = findPillar(pillars, (best, next) =>
     next.score > best.score ? next : best,
   );

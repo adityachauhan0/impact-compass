@@ -47,4 +47,40 @@ describe("ImpactCompassWorkspace", () => {
     expect(screen.getByText("Invoice follow-up autopilot")).toBeInTheDocument();
     expect(screen.getAllByText(/late client payments/).length).toBeGreaterThan(0);
   });
+
+  it("refreshes measured outputs from the edited query bundle", () => {
+    render(<ImpactCompassWorkspace />);
+
+    fireEvent.change(screen.getByLabelText("Idea name"), {
+      target: { value: "Invoice follow-up autopilot" },
+    });
+    fireEvent.change(screen.getByLabelText("Problem keywords"), {
+      target: { value: "late client payments, unpaid invoices" },
+    });
+    fireEvent.change(screen.getByLabelText("Solution keywords"), {
+      target: { value: "invoice reminder automation" },
+    });
+    fireEvent.change(screen.getByLabelText("Audience keywords"), {
+      target: { value: "freelancers, consultants" },
+    });
+    fireEvent.change(screen.getByLabelText("Competitor keywords"), {
+      target: { value: "HoneyBook alternative" },
+    });
+    fireEvent.change(screen.getByLabelText("Exclusions"), {
+      target: { value: "medical billing" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /^lock query bundle$/i }));
+
+    expect(screen.getByText("Measured Query Bundle")).toBeInTheDocument();
+    expect(screen.getAllByText(/invoice reminder automation/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/freelancers/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/medical billing/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/late client payments/).length).toBeGreaterThan(0);
+    expect(
+      screen.queryByText("Private-practice therapists discussing documentation spilling into evenings."),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText("SOAP notes")).not.toBeInTheDocument();
+    expect(screen.queryByText(/paperwork burden/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/private-practice validation/)).not.toBeInTheDocument();
+  });
 });
