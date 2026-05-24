@@ -1,13 +1,44 @@
 {
   "name": "impact-compass",
-  "version": "0.2.0",
-  "description": "Purely statistical, deterministic project idea validator and market research CLI.",
+  "version": "0.2.2",
+  "description": "Deterministic market research CLI for startup idea validation, demand scoring, and competitive analysis.",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adityachauhan0/impact-compass.git"
   },
+  "homepage": "https://github.com/adityachauhan0/impact-compass#readme",
+  "bugs": {
+    "url": "https://github.com/adityachauhan0/impact-compass/issues"
+  },
   "private": false,
+  "keywords": [
+    "market-research",
+    "idea-validation",
+    "startup-validation",
+    "product-validation",
+    "market-validation",
+    "competitive-analysis",
+    "product-market-fit",
+    "demand-validation",
+    "demand-analysis",
+    "market-analysis",
+    "startup",
+    "founder-tools",
+    "indie-hacker",
+    "mvp",
+    "cli",
+    "analytics",
+    "developer-tools",
+    "scoring",
+    "deterministic",
+    "no-ai",
+    "github",
+    "npm",
+    "reddit",
+    "hacker-news",
+    "stackexchange"
+  ],
   "files": [
     "assets/",
     "src/",

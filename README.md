@@ -26,25 +26,34 @@ Why? Because you didn't measure the noise. High demand means nothing if the mark
 
 Impact Compass takes your idea and compiles a query bundle (problems, solutions, target audiences, and competitors). It then pulls live data from seven pillars of public evidence and runs an advanced logarithmic scoring algorithm. 
 
+```mermaid
+flowchart TD
+  A["Idea brief JSON"] --> B["Query bundle compiler"]
+  B --> C["35 source adapters"]
+  C --> D["Public APIs: GitHub, Reddit, npm, Hacker News, Stack Exchange, Wikipedia, App Store"]
+  D --> E["Evidence normalizer"]
+  E --> F["Relevance filter: weak keyword match loses 60% signal"]
+  F --> G["Pillar scorers: demand, pain, momentum, activity, competition, channel fit, evidence quality"]
+  G --> H["Weighted score engine"]
+  H --> I["Red ocean saturation penalty"]
+  I --> J["Final score, confidence, interpretation, JSON report"]
+```
+
 It measures:
 - **Demand & Pain:** Are people actually complaining about this, or is the problem minor?
 - **Momentum & Activity:** Are developers and founders actively building in this space right now?
 - **Competition Fit:** If the tool finds 10,000 competitors, your score tanks. Red oceans get penalized heavily.
 
-```math
-\text{Score} =
-\operatorname{clamp}_{0}^{100}
-\left(
-  \frac{\sum_i w_i p_i}{\sum_i w_i}
-  -
-  \begin{cases}
-    0.5(30 - C), & D > 70 \land C < 30 \\
-    0, & \text{otherwise}
-  \end{cases}
-\right)
-```
+The score is intentionally simple to read:
 
-Where `p_i` are the pillar scores, `w_i` are the pillar weights, `D` is demand, and `C` is competition fit. Translation: big demand is good, but big demand plus a crushed competition score means you are sailing into a red ocean with a paper boat.
+1. Score each pillar from 0 to 100.
+2. Multiply every pillar by its weight.
+3. Add those weighted pillar scores together.
+4. Divide by the total weight.
+5. Clamp the result between 0 and 100.
+6. If demand is above 70 but competition fit is below 30, subtract an extra red-ocean penalty.
+
+Translation: big demand is good, but big demand plus a crushed competition score means you are sailing into a red ocean with a paper boat.
 
 The engine spits out a final score out of 100, along with a brutally honest interpretation of whether you should build it, pivot, or drop the idea entirely.
 
@@ -83,7 +92,7 @@ Give Impact Compass an idea brief and a locked query bundle. The CLI does the di
 }
 ```
 
-## The Math Behind the Score
+## Scoring Logic
 
 We stripped out the generic averages. The engine uses logarithmic scaling, so a GitHub repo with 5,000 stars is weighted accurately against one with 5 stars. It applies relevance penalties. If a search result does not contain your target keywords, it loses 60% of its value instantly.
 
