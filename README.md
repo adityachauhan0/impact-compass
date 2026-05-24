@@ -11,6 +11,8 @@ npm i impact-compass
 npx impact-compass idea.json output.json
 ```
 
+[Documentation](DOCUMENTATION.md) / [Agent Skill Guide](SKILLS.md)
+
 A purely statistical, deterministic project idea validator and market research CLI.
 
 Impact Compass fetches keyword rankings and engagement signals from real sources like GitHub, npm, Reddit, Stack Exchange, Hacker News, Wikipedia, and the App Store. It checks the *hype* around your project before you waste six months, a billion tokens, and enough coffee to make your keyboard anxious.
@@ -18,6 +20,14 @@ Impact Compass fetches keyword rankings and engagement signals from real sources
 No AI. No vibes. No GPT wrapper whispering "*yo this idea is goated*" right before it lies to your face and stabs you in the roadmap.
 
 Impact Compass is a deterministic engine. It pulls live, real-world evidence through an API-based keyword scoring pipeline, then runs that data through a brutal scoring engine to tell you if you found a blue ocean or if you are walking into another brilliant project that nobody wants.
+
+## Watch It Judge
+
+Here is the compass doing its thing: live source scans, terminal drama, ASCII ceremony, and then the score lands. No motivational TED Talk. Just numbers walking in, bad assumptions walking out.
+
+<p align="center">
+  <img src="assets/impact-compass-demo.gif" alt="Impact Compass CLI demo" width="100%" />
+</p>
 
 ## The Problem
 
@@ -59,10 +69,6 @@ The score is intentionally simple to read:
 Translation: big demand is good, but big demand plus a crushed competition score means you are sailing into a red ocean with a paper boat.
 
 The engine spits out a final score out of 100, along with a brutally honest interpretation of whether you should build it, pivot, or drop the idea entirely.
-
-<p align="center">
-  <!-- Demo GIF coming after npm publish: CLI run, ASCII art, and React State Management score. -->
-</p>
 
 ## Quickstart
 
