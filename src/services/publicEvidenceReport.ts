@@ -1,9 +1,7 @@
 import { createAll35Adapters } from "./sources/extendedAdapters";
 import type { FetchJson, SourceAdapter } from "./sources/sourceAdapter";
-import type { EvidenceItem } from "../domain/evidence";
 import type { QueryBundle } from "../domain/queryBundle";
 import {
-  createQueryDerivedEvidence,
   derivePillarScoresFromEvidence,
   deriveUncertainty,
 } from "./queryDerivedReport";
@@ -49,19 +47,6 @@ async function scanSource(adapter: SourceAdapter, queryBundle: QueryBundle) {
   } catch {
     return [];
   }
-}
-
-function mergeEvidence(primary: EvidenceItem[], fallback: EvidenceItem[]) {
-  const seen = new Set<string>();
-
-  return [...primary, ...fallback].filter((item) => {
-    if (seen.has(item.id)) {
-      return false;
-    }
-
-    seen.add(item.id);
-    return true;
-  });
 }
 
 export async function loadPublicEvidenceReport({

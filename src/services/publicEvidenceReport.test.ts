@@ -47,6 +47,7 @@ describe("public evidence report loader", () => {
             {
               objectID: "42",
               title: "Ask HN: Invoice reminder workflows",
+              created_at: "2026-02-02T00:00:00Z",
               created_at_i: 1770000000,
               points: 20,
               num_comments: 10,
@@ -58,8 +59,8 @@ describe("public evidence report loader", () => {
 
     expect(requestedUrls.some((url) => url.includes("api.github.com"))).toBe(true);
     expect(requestedUrls.some((url) => url.includes("hn.algolia.com"))).toBe(true);
-    expect(report.evidence.some((item) => item.id === "github-repo-17")).toBe(true);
-    expect(report.evidence.some((item) => item.id === "hn-search-42")).toBe(true);
+    expect(report.evidence.some((item) => item.id === "gh-17")).toBe(true);
+    expect(report.evidence.some((item) => item.id === "hn-42")).toBe(true);
     expect(report.idea.name).toBe("Invoice follow-up autopilot");
   });
 });

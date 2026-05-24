@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { EvidenceItem } from "../../domain/evidence";
 import type { QueryBundle } from "../../domain/queryBundle";
 import type { FetchJson, SourceAdapter } from "./sourceAdapter";
@@ -6,7 +7,7 @@ async function safeFetch(fetchJson: FetchJson, url: string, parser: (data: any) 
   try {
     const data = await fetchJson(url);
     return parser(data);
-  } catch (e) {
+  } catch {
     return [];
   }
 }

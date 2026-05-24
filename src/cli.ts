@@ -93,7 +93,7 @@ async function main() {
       else if (hostname.includes('wikipedia')) apiName = 'Wikipedia';
       else if (hostname.includes('apple')) apiName = 'App Store';
       else apiName = hostname;
-    } catch(e) {}
+    } catch {}
     
     console.log(`  ${ANSI_CYAN}FETCH${ANSI_RESET} [${apiName} API] => ${url}`);
     const res = await fetch(url, { headers: { "User-Agent": "Impact-Compass-CLI" } });
