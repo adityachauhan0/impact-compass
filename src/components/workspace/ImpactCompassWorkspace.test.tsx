@@ -1,7 +1,8 @@
 // @vitest-environment jsdom
 import "@testing-library/jest-dom/vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
+import { createDemoReport } from "../../services/demoReport";
 import { ImpactCompassWorkspace } from "./ImpactCompassWorkspace";
 
 afterEach(() => {
@@ -22,18 +23,18 @@ describe("ImpactCompassWorkspace", () => {
     expect(screen.queryByText("Evidence Ledger")).not.toBeInTheDocument();
   });
 
-  it("shows the report only after the query bundle is locked", () => {
+  it("shows the report only after the query bundle is locked", async () => {
     render(<ImpactCompassWorkspace />);
 
     fireEvent.click(screen.getByRole("button", { name: /^lock query bundle$/i }));
 
-    expect(screen.getByText("Evidence Ledger")).toBeInTheDocument();
+    expect(await screen.findByText("Evidence Ledger")).toBeInTheDocument();
     expect(screen.getByText("Locked v1")).toBeInTheDocument();
     expect(screen.getByText("Comparison")).toBeInTheDocument();
     expect(screen.getByText("Saved reports")).toBeInTheDocument();
   });
 
-  it("generates the report from edited idea fields", () => {
+  it("generates the report from edited idea fields", async () => {
     render(<ImpactCompassWorkspace />);
 
     fireEvent.change(screen.getByLabelText("Idea name"), {
@@ -44,11 +45,29 @@ describe("ImpactCompassWorkspace", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: /^lock query bundle$/i }));
 
-    expect(screen.getByText("Invoice follow-up autopilot")).toBeInTheDocument();
+    expect(await screen.findByText("Invoice follow-up autopilot")).toBeInTheDocument();
     expect(screen.getAllByText(/late client payments/).length).toBeGreaterThan(0);
   });
 
-  it("refreshes measured outputs from the edited query bundle", () => {
+  it("keeps the report hidden while public evidence is loading", async () => {
+    let resolveReport: (report: ReturnType<typeof createDemoReport>) => void = () => {};
+    const reportPromise = new Promise<ReturnType<typeof createDemoReport>>((resolve) => {
+      resolveReport = resolve;
+    });
+
+    render(<ImpactCompassWorkspace loadReport={() => reportPromise} />);
+
+    fireEvent.click(screen.getByRole("button", { name: /^lock query bundle$/i }));
+
+    expect(screen.getByText("Loading public evidence")).toBeInTheDocument();
+    expect(screen.queryByText("Evidence Ledger")).not.toBeInTheDocument();
+
+    resolveReport(createDemoReport());
+
+    expect(await screen.findByText("Evidence Ledger")).toBeInTheDocument();
+  });
+
+  it("refreshes measured outputs from the edited query bundle", async () => {
     render(<ImpactCompassWorkspace />);
 
     fireEvent.change(screen.getByLabelText("Idea name"), {
@@ -71,7 +90,7 @@ describe("ImpactCompassWorkspace", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: /^lock query bundle$/i }));
 
-    expect(screen.getByText("Measured Query Bundle")).toBeInTheDocument();
+    expect(await screen.findByText("Measured Query Bundle")).toBeInTheDocument();
     expect(screen.getAllByText(/invoice reminder automation/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/freelancers/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/medical billing/).length).toBeGreaterThan(0);
@@ -82,5 +101,19 @@ describe("ImpactCompassWorkspace", () => {
     expect(screen.queryByText("SOAP notes")).not.toBeInTheDocument();
     expect(screen.queryByText(/paperwork burden/)).not.toBeInTheDocument();
     expect(screen.queryByText(/private-practice validation/)).not.toBeInTheDocument();
+  });
+
+  it("unlocks fields after a loading failure", async () => {
+    render(
+      <ImpactCompassWorkspace
+        loadReport={() => Promise.reject(new Error("network unavailable"))}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /^lock query bundle$/i }));
+
+    expect(await screen.findByText("network unavailable")).toBeInTheDocument();
+    expect(screen.queryByText("Evidence Ledger")).not.toBeInTheDocument();
+    await waitFor(() => expect(screen.getByLabelText("Idea name")).not.toBeDisabled());
   });
 });

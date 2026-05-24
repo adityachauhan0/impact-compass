@@ -8,12 +8,7 @@ import { CompassReport } from "../report/CompassReport";
 import { createLockedQueryBundle, evaluateQueryQuality } from "../../domain/queryBundle";
 import { defaultIdea, defaultQueryForm } from "../../services/demoReport";
 import { buildSnapshotComparisonRows } from "../../services/comparison";
-import {
-  createQueryDerivedEvidence,
-  derivePillarScoresFromEvidence,
-  deriveUncertainty,
-} from "../../services/queryDerivedReport";
-import { buildCompassReport } from "../../services/reportBuilder";
+import { loadPublicEvidenceReport } from "../../services/publicEvidenceReport";
 import type { CompassReportModel } from "../../services/reportTypes";
 import {
   listReportSnapshots,
@@ -23,6 +18,20 @@ import {
 
 const fieldClass =
   "mt-2 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-950 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-100";
+
+type LoadReportInput = {
+  idea: {
+    name: string;
+    problem: string;
+    targetUser: string;
+    lens: string;
+  };
+  queryBundle: ReturnType<typeof createLockedQueryBundle>;
+};
+
+type ImpactCompassWorkspaceProps = {
+  loadReport?: (input: LoadReportInput) => Promise<CompassReportModel>;
+};
 
 function getBrowserStorage() {
   if (typeof window === "undefined") {
@@ -36,9 +45,13 @@ function getBrowserStorage() {
   }
 }
 
-export function ImpactCompassWorkspace() {
+export function ImpactCompassWorkspace({
+  loadReport = loadPublicEvidenceReport,
+}: ImpactCompassWorkspaceProps) {
   const [lockedReport, setLockedReport] = useState<CompassReportModel | null>(null);
   const [savedReports, setSavedReports] = useState<ReportSnapshot[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [ideaName, setIdeaName] = useState(defaultIdea.name);
   const [problem, setProblem] = useState(defaultIdea.problem);
   const [targetUser, setTargetUser] = useState(defaultIdea.targetUser);
@@ -54,7 +67,6 @@ export function ImpactCompassWorkspace() {
     defaultQueryForm.competitorKeywords,
   );
   const [exclusions, setExclusions] = useState(defaultQueryForm.exclusions);
-  const locked = lockedReport !== null;
   const queryForm = useMemo(
     () => ({
       problemKeywords,
@@ -77,6 +89,7 @@ export function ImpactCompassWorkspace() {
   );
   const queryQuality = evaluateQueryQuality(previewQueryBundle);
   const comparisonRows = buildSnapshotComparisonRows(savedReports);
+  const controlsDisabled = lockedReport !== null || loading;
 
   useEffect(() => {
     const storage = getBrowserStorage();
@@ -90,29 +103,36 @@ export function ImpactCompassWorkspace() {
     }
   }, []);
 
-  function lockQueryBundle() {
+  async function lockQueryBundle() {
     const idea = {
       name: ideaName,
       problem,
       targetUser,
       lens,
     };
-    const evidence = createQueryDerivedEvidence(idea, previewQueryBundle);
-    const report = buildCompassReport({
-      idea,
-      queryBundle: previewQueryBundle,
-      evidence,
-      pillarScores: derivePillarScoresFromEvidence(evidence),
-      uncertainty: deriveUncertainty(previewQueryBundle),
-    });
 
-    setLockedReport(report);
+    setLoading(true);
+    setLoadError(null);
+    setLockedReport(null);
 
-    const storage = getBrowserStorage();
+    try {
+      const report = await loadReport({
+        idea,
+        queryBundle: previewQueryBundle,
+      });
 
-    if (storage) {
-      saveReportSnapshot(storage, report);
-      setSavedReports(listReportSnapshots(storage));
+      setLockedReport(report);
+
+      const storage = getBrowserStorage();
+
+      if (storage) {
+        saveReportSnapshot(storage, report);
+        setSavedReports(listReportSnapshots(storage));
+      }
+    } catch (error) {
+      setLoadError(error instanceof Error ? error.message : "Public evidence scan failed.");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -147,7 +167,7 @@ export function ImpactCompassWorkspace() {
                     className={fieldClass}
                     value={ideaName}
                     onChange={(event) => setIdeaName(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -157,7 +177,7 @@ export function ImpactCompassWorkspace() {
                     rows={4}
                     value={problem}
                     onChange={(event) => setProblem(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -166,7 +186,7 @@ export function ImpactCompassWorkspace() {
                     className={fieldClass}
                     value={targetUser}
                     onChange={(event) => setTargetUser(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -175,7 +195,7 @@ export function ImpactCompassWorkspace() {
                     className={fieldClass}
                     value={lens}
                     onChange={(event) => setLens(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   >
                     <option>B2B Workflow / Vertical SaaS</option>
                     <option>Devtool / API / Infra</option>
@@ -197,7 +217,7 @@ export function ImpactCompassWorkspace() {
                     rows={2}
                     value={problemKeywords}
                     onChange={(event) => setProblemKeywords(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -207,7 +227,7 @@ export function ImpactCompassWorkspace() {
                     rows={2}
                     value={solutionKeywords}
                     onChange={(event) => setSolutionKeywords(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -217,7 +237,7 @@ export function ImpactCompassWorkspace() {
                     rows={2}
                     value={audienceKeywords}
                     onChange={(event) => setAudienceKeywords(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -227,7 +247,7 @@ export function ImpactCompassWorkspace() {
                     rows={2}
                     value={competitorKeywords}
                     onChange={(event) => setCompetitorKeywords(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
                 <label className="block text-sm font-medium text-slate-700">
@@ -237,7 +257,7 @@ export function ImpactCompassWorkspace() {
                     rows={2}
                     value={exclusions}
                     onChange={(event) => setExclusions(event.target.value)}
-                    disabled={locked}
+                    disabled={controlsDisabled}
                   />
                 </label>
               </div>
@@ -259,15 +279,19 @@ export function ImpactCompassWorkspace() {
                   type="button"
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:bg-slate-300"
                   onClick={lockQueryBundle}
-                  disabled={locked}
+                  disabled={controlsDisabled}
                 >
                   <Lock size={16} aria-hidden="true" />
-                  Lock Query Bundle
+                  {loading ? "Loading" : "Lock Query Bundle"}
                 </button>
                 <button
                   type="button"
                   className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-3 text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
-                  onClick={() => setLockedReport(null)}
+                  onClick={() => {
+                    setLockedReport(null);
+                    setLoadError(null);
+                  }}
+                  disabled={loading}
                   aria-label="Unlock query bundle"
                 >
                   <RotateCcw size={16} aria-hidden="true" />
@@ -278,7 +302,21 @@ export function ImpactCompassWorkspace() {
           </aside>
 
           <div className="min-w-0">
-            {lockedReport ? (
+            {loading ? (
+              <div className="flex min-h-[520px] items-center justify-center rounded-lg border border-slate-200 bg-white p-6 text-center shadow-sm">
+                <div className="max-w-md">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-teal-800">
+                    Loading public evidence
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold text-slate-950">
+                    Scanning free public sources.
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    The report will appear only after source data returns.
+                  </p>
+                </div>
+              </div>
+            ) : lockedReport ? (
               <div className="space-y-5">
                 <CompassReport report={lockedReport} />
                 <ComparisonTable rows={comparisonRows} />
@@ -295,6 +333,11 @@ export function ImpactCompassWorkspace() {
                   <p className="mt-3 text-sm leading-6 text-slate-600">
                     Final scoring requires a visible, reproducible query bundle.
                   </p>
+                  {loadError ? (
+                    <p className="mt-4 rounded-lg border border-rose-200 bg-rose-50 p-3 text-sm font-medium text-rose-900">
+                      {loadError}
+                    </p>
+                  ) : null}
                 </div>
               </div>
             )}
