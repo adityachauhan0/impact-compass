@@ -32,16 +32,14 @@ Why? Because you didn't measure the noise. High demand means nothing if the mark
 Impact Compass takes your idea and compiles a query bundle (problems, solutions, target audiences, and competitors). It then pulls live data from seven pillars of public evidence and runs an advanced logarithmic scoring algorithm. 
 
 ```mermaid
-flowchart TD
-  A["Idea brief JSON"] --> B["Query bundle compiler"]
-  B --> C["35 source adapters"]
-  C --> D["Public APIs: GitHub, Reddit, npm, Hacker News, Stack Exchange, Wikipedia, App Store"]
-  D --> E["Evidence normalizer"]
-  E --> F["Relevance filter: weak keyword match loses 60% signal"]
-  F --> G["Pillar scorers: demand, pain, momentum, activity, competition, channel fit, evidence quality"]
-  G --> H["Weighted score engine"]
-  H --> I["Red ocean saturation penalty"]
-  I --> J["Final score, confidence, interpretation, JSON report"]
+flowchart LR
+  A["Idea JSON"] --> B["Query bundle"]
+  B --> C["35 adapters"]
+  C --> D["GitHub / Reddit / npm / HN / Stack Exchange / Wiki / App Store"]
+  D --> E["Normalize + relevance filter"]
+  E --> F["7 pillar scores"]
+  F --> G["Weighted score + red-ocean penalty"]
+  G --> H["Score / confidence / verdict / JSON"]
 ```
 
 It measures:
