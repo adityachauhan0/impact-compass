@@ -4,9 +4,9 @@
   <!-- PLACEHOLDER_HERO_IMAGE: Add a sleek, high-quality banner image of the CLI tool running here -->
 </p>
 
-An AI startup idea validator and market research CLI. It mathematically evaluates your product market fit before you waste six months writing code.
+A purely statistical, deterministic startup idea validator and market research CLI. It mathematically evaluates your product market fit before you waste six months writing code. No AI. No LLM hallucinations. Just math.
 
-Most business idea validators just count search volume and tell you what you want to hear. Impact Compass scrapes live, real-world engagement data across GitHub, Hacker News, Reddit, Stack Exchange, npm, Wikipedia, and the App Store. Then it runs that data through a brutal scoring engine to tell you if you've found a blue ocean or if you're walking into an oversaturated trap.
+Most business idea validators are just ChatGPT wrappers that tell you what you want to hear. Impact Compass is a deterministic engine. It scrapes live, real-world engagement data across GitHub, Hacker News, Reddit, Stack Exchange, npm, Wikipedia, and the App Store. Then it runs that data through a brutal scoring engine to tell you if you've found a blue ocean or if you're walking into an oversaturated trap.
 
 ## The Problem
 
