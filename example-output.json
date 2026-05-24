@@ -1,0 +1,352 @@
+{
+  "methodologyVersion": "0.1",
+  "idea": {
+    "name": "Privacy-safe session note drafts",
+    "problem": "Solo therapists lose unpaid time turning session context into structured notes.",
+    "targetUser": "Solo therapists and small private clinics",
+    "lens": "B2B Workflow / Vertical SaaS"
+  },
+  "queryBundle": {
+    "version": 1,
+    "locked": true,
+    "problemKeywords": [
+      "therapist paperwork",
+      "therapy documentation",
+      "SOAP notes"
+    ],
+    "solutionKeywords": [
+      "session note drafts",
+      "therapy note automation"
+    ],
+    "audienceKeywords": [
+      "solo therapists",
+      "private practice therapists"
+    ],
+    "competitorKeywords": [
+      "therapy notes app",
+      "EHR notes"
+    ],
+    "painPhrases": [
+      "manual process",
+      "too much paperwork",
+      "after-hours notes",
+      "how do I reduce",
+      "alternative to",
+      "too expensive",
+      "workaround"
+    ],
+    "exclusions": [
+      "physical therapy",
+      "school therapy notes"
+    ]
+  },
+  "queryQuality": {
+    "label": "Strong",
+    "warning": "Ambiguity controlled with audience terms and exclusions."
+  },
+  "pillars": [
+    {
+      "key": "demand",
+      "label": "Demand",
+      "score": 72,
+      "note": "Demand reads public-search targets for \"therapist paperwork\" across free sources."
+    },
+    {
+      "key": "pain",
+      "label": "Pain",
+      "score": 0,
+      "note": "Pain reads workaround and complaint language around \"therapist paperwork\"."
+    },
+    {
+      "key": "momentum",
+      "label": "Momentum",
+      "score": 100,
+      "note": "Momentum reads recent public activity around \"session note drafts\"."
+    },
+    {
+      "key": "competitionFit",
+      "label": "Competition Fit",
+      "score": 70,
+      "note": "Competition Fit compares visible alternatives such as \"therapy notes app\"."
+    },
+    {
+      "key": "activity",
+      "label": "Activity",
+      "score": 1,
+      "note": "Activity reads builder and package signals around \"session note drafts\"."
+    },
+    {
+      "key": "channelFit",
+      "label": "Channel Fit",
+      "score": 72,
+      "note": "Channel Fit checks whether \"solo therapists\" has reachable public communities."
+    },
+    {
+      "key": "evidenceQuality",
+      "label": "Evidence Quality",
+      "score": 0,
+      "note": "Evidence Quality rewards source diversity, exclusions, and query specificity."
+    }
+  ],
+  "formulas": [
+    {
+      "pillar": "Demand",
+      "formula": "0.45 volume + 0.25 unique authors + 0.20 questions + 0.10 engagement",
+      "formulaLatex": "0.45V + 0.25A_u + 0.20Q_i + 0.10E_p",
+      "inputs": [
+        "mention volume",
+        "unique authors",
+        "question intent",
+        "engagement percentile"
+      ],
+      "score": 72
+    },
+    {
+      "pillar": "Pain",
+      "formula": "0.35 pain density + 0.25 workaround density + 0.20 alternative density + 0.20 discussion depth",
+      "formulaLatex": "0.35D_p + 0.25D_w + 0.20D_a + 0.20D_d",
+      "inputs": [
+        "pain phrases",
+        "workarounds",
+        "alternative seeking",
+        "discussion depth"
+      ],
+      "score": 0
+    },
+    {
+      "pillar": "Momentum",
+      "formula": "0.40 short growth + 0.30 medium growth + 0.20 sustained growth - 0.10 spike penalty",
+      "formulaLatex": "0.40G_{30} + 0.30G_{90} + 0.20G_s - 0.10P_{spike}",
+      "inputs": [
+        "30-day rate",
+        "90-day rate",
+        "sustained trend",
+        "spike penalty"
+      ],
+      "score": 100
+    },
+    {
+      "pillar": "Competition Fit",
+      "formula": "100 * exp(-((supply percentile - 60)^2) / (2 * 25^2))",
+      "formulaLatex": "100e^{-\\frac{(P_s - 60)^2}{2 \\cdot 25^2}}",
+      "inputs": [
+        "competitor count",
+        "launch count",
+        "repo/package supply",
+        "saturation penalty"
+      ],
+      "score": 70
+    },
+    {
+      "pillar": "Activity",
+      "formula": "weighted available activity signals; non-relevant missing metrics excluded",
+      "formulaLatex": "\\frac{\\sum w_i s_i}{\\sum w_i}",
+      "inputs": [
+        "repo activity",
+        "package activity",
+        "launch recency",
+        "discussion freshness"
+      ],
+      "score": 1
+    },
+    {
+      "pillar": "Channel Fit",
+      "formula": "0.35 concentration + 0.25 community count + 0.25 engagement + 0.15 lens match",
+      "formulaLatex": "0.35C_s + 0.25C_n + 0.25E_c + 0.15L_m",
+      "inputs": [
+        "source concentration",
+        "community count",
+        "top channel engagement",
+        "lens match"
+      ],
+      "score": 72
+    },
+    {
+      "pillar": "Evidence Quality",
+      "formula": "0.25 source diversity + 0.20 sample size + 0.20 precision + 0.15 ambiguity inverse + 0.10 duplicate inverse + 0.10 recency coverage",
+      "formulaLatex": "0.25D_s + 0.20N + 0.20R_p + 0.15A_i + 0.10D_i + 0.10R_c",
+      "inputs": [
+        "source diversity",
+        "sample size",
+        "precision",
+        "ambiguity",
+        "duplicates",
+        "recency"
+      ],
+      "score": 0
+    }
+  ],
+  "summary": {
+    "score": 47,
+    "uncertainty": 9,
+    "confidence": "Medium",
+    "range": {
+      "lower": 38,
+      "upper": 56
+    }
+  },
+  "integrity": {
+    "finalScoreAvailable": true,
+    "confidenceCap": "Low",
+    "warnings": [
+      "Evidence Quality below 40 caps confidence at Low.",
+      "Relevant evidence count is below the minimum confidence threshold."
+    ]
+  },
+  "evidence": [
+    {
+      "id": "github-repo-1176070434",
+      "source": "GitHub",
+      "sourceType": "repo",
+      "date": "2026-03-11",
+      "query": "therapist paperwork",
+      "snippet": "This is a digital software platform designed to manage patient records and therapy schedules in Ayurvedic clinics and hospitals. It helps doctors and therapists organize patient details and plan treatments. The system reduces manual paperwork, improves coordination between therapists and doctors, and ensures better monitoring of patient treatment.",
+      "link": "https://github.com/Sanjana250411/theratrack",
+      "metricContribution": "Activity",
+      "included": true,
+      "reason": "1 stars and 0 forks; updated recently.",
+      "duplicateCluster": "github-1176070434",
+      "signalStrength": 1
+    },
+    {
+      "id": "github-repo-1141275857",
+      "source": "GitHub",
+      "sourceType": "repo",
+      "date": "2026-04-15",
+      "query": "therapist paperwork",
+      "snippet": "Praxis-AI is an AI-powered clinical documentation platform that transforms how NDIS Occupational Therapists work. Record your session notes, and our AI automatically generates compliant reports—Functional Capacity Assessments, Progress Reports, and AT Justifications in minutes, not hours. Less paperwork, more therapy.",
+      "link": "https://github.com/jennofrie/Praxis-AI",
+      "metricContribution": "Activity",
+      "included": true,
+      "reason": "3 stars and 0 forks; updated recently.",
+      "duplicateCluster": "github-1141275857",
+      "signalStrength": 3
+    },
+    {
+      "id": "github-repo-1120743198",
+      "source": "GitHub",
+      "sourceType": "repo",
+      "date": "2025-12-21",
+      "query": "therapist paperwork",
+      "snippet": "An AI-powered platform that helps therapists reduce paperwork and gain meaningful insights, so they can focus more on their clients.",
+      "link": "https://github.com/emosapien-dev/emosapien",
+      "metricContribution": "Activity",
+      "included": true,
+      "reason": "0 stars and 0 forks; updated recently.",
+      "duplicateCluster": "github-1120743198",
+      "signalStrength": 0
+    },
+    {
+      "id": "github-repo-799562268",
+      "source": "GitHub",
+      "sourceType": "repo",
+      "date": "2024-05-28",
+      "query": "therapist paperwork",
+      "snippet": " Desktop application developed using Java and JavaFX. This application is designed to assist speech therapists in efficiently managing their patients and appointments. It provides an intuitive interface and comprehensive features , allowing therapists to focus more on their patients' progress and less on paperwork.",
+      "link": "https://github.com/waelb2/Speech-therapy-clinic-management-system-",
+      "metricContribution": "Activity",
+      "included": true,
+      "reason": "1 stars and 0 forks; updated recently.",
+      "duplicateCluster": "github-799562268",
+      "signalStrength": 1
+    },
+    {
+      "id": "query-derived-1",
+      "date": "2026-05-24",
+      "included": true,
+      "duplicateCluster": "query-derived-demand",
+      "source": "Reddit",
+      "sourceType": "post",
+      "query": "therapist paperwork",
+      "snippet": "Reddit public-search target for \"therapist paperwork\" and \"solo therapists\".",
+      "link": "https://www.reddit.com/search/?q=therapist%20paperwork%20solo%20therapists",
+      "metricContribution": "Demand",
+      "reason": "Generated from the locked problem and audience terms.",
+      "signalStrength": 79
+    },
+    {
+      "id": "query-derived-2",
+      "date": "2026-05-24",
+      "included": true,
+      "duplicateCluster": "query-derived-demand",
+      "source": "YouTube",
+      "sourceType": "video",
+      "query": "session note drafts",
+      "snippet": "YouTube public-search target for \"session note drafts\" tutorials, reviews, and workflows.",
+      "link": "https://www.youtube.com/results?search_query=session%20note%20drafts",
+      "metricContribution": "Demand",
+      "reason": "Generated from the locked solution terms.",
+      "signalStrength": 64
+    },
+    {
+      "id": "query-derived-4",
+      "date": "2026-05-24",
+      "included": true,
+      "duplicateCluster": "query-derived-competition-fit",
+      "source": "Product Hunt",
+      "sourceType": "launch",
+      "query": "therapy notes app",
+      "snippet": "Product Hunt search target for comparable launches: \"therapy notes app\".",
+      "link": "https://www.producthunt.com/search?q=therapy%20notes%20app",
+      "metricContribution": "Competition Fit",
+      "reason": "Generated from locked competitor terms.",
+      "signalStrength": 70
+    },
+    {
+      "id": "query-derived-6",
+      "date": "2026-05-24",
+      "included": true,
+      "duplicateCluster": "query-derived-channel-fit",
+      "source": "Stack Exchange",
+      "sourceType": "question",
+      "query": "solo therapists",
+      "snippet": "Stack Exchange search target for questions from or about \"solo therapists\".",
+      "link": "https://stackexchange.com/search?q=solo%20therapists",
+      "metricContribution": "Channel Fit",
+      "reason": "Generated from locked audience terms.",
+      "signalStrength": 72
+    },
+    {
+      "id": "query-derived-7",
+      "date": "2026-05-24",
+      "included": true,
+      "duplicateCluster": "query-derived-momentum",
+      "source": "npm",
+      "sourceType": "package",
+      "query": "session note drafts",
+      "snippet": "npm package-search target for builder activity around \"session note drafts\".",
+      "link": "https://www.npmjs.com/search?q=session%20note%20drafts",
+      "metricContribution": "Momentum",
+      "reason": "Generated from locked solution terms and free package-search surface.",
+      "signalStrength": 100
+    },
+    {
+      "id": "query-derived-exclusion-control",
+      "source": "Reddit",
+      "sourceType": "post",
+      "date": "2026-05-24",
+      "query": "physical therapy",
+      "snippet": "Wrong-meaning control query for excluded term \"physical therapy\".",
+      "link": "https://www.reddit.com/search/?q=physical%20therapy",
+      "metricContribution": "Excluded",
+      "included": false,
+      "reason": "Excluded by query bundle term: physical therapy.",
+      "duplicateCluster": "query-derived-exclusion-control",
+      "signalStrength": 0
+    }
+  ],
+  "strongestPillar": {
+    "key": "momentum",
+    "label": "Momentum",
+    "score": 100,
+    "note": "Momentum reads recent public activity around \"session note drafts\"."
+  },
+  "weakestPillar": {
+    "key": "pain",
+    "label": "Pain",
+    "score": 0,
+    "note": "Pain reads workaround and complaint language around \"therapist paperwork\"."
+  },
+  "interpretation": "Public evidence supports deeper validation. Pain appears strong, while activity data remains thinner.",
+  "disclaimer": "This score reflects public evidence found through selected sources and queries. It is not a prediction of success, customer willingness to pay, or product quality."
+}

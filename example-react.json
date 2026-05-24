@@ -1,0 +1,15 @@
+{
+  "idea": {
+    "name": "A fast global state manager for React",
+    "problem": "Redux has too much boilerplate and React context re-renders everything.",
+    "targetUser": "React Developers",
+    "lens": "Developer Tools"
+  },
+  "queryBundleForm": {
+    "problemKeywords": "react state management, context api re-renders, redux boilerplate",
+    "solutionKeywords": "atomic state, react global state library",
+    "audienceKeywords": "frontend developer, react dev",
+    "competitorKeywords": "zustand, jotai, recoil",
+    "exclusions": "vue, angular"
+  }
+}

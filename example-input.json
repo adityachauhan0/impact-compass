@@ -1,0 +1,15 @@
+{
+  "idea": {
+    "name": "Privacy-safe session note drafts",
+    "problem": "Solo therapists lose unpaid time turning session context into structured notes.",
+    "targetUser": "Solo therapists and small private clinics",
+    "lens": "B2B Workflow / Vertical SaaS"
+  },
+  "queryBundleForm": {
+    "problemKeywords": "therapist paperwork, therapy documentation, SOAP notes",
+    "solutionKeywords": "session note drafts, therapy note automation",
+    "audienceKeywords": "solo therapists, private practice therapists",
+    "competitorKeywords": "therapy notes app, EHR notes",
+    "exclusions": "physical therapy, school therapy notes"
+  }
+}

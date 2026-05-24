@@ -1,0 +1,15 @@
+{
+  "idea": {
+    "name": "Local Small-Batch Coffee Roaster",
+    "problem": "People in the neighborhood want fresh roasted beans but only have access to stale supermarket coffee.",
+    "targetUser": "Local Coffee Enthusiasts",
+    "lens": "Local Business / Retail"
+  },
+  "queryBundleForm": {
+    "problemKeywords": "stale coffee beans, bad local coffee",
+    "solutionKeywords": "small batch roaster, local roasted coffee",
+    "audienceKeywords": "coffee snob, espresso enthusiast",
+    "competitorKeywords": "starbucks, blue bottle",
+    "exclusions": "instant coffee, tea"
+  }
+}

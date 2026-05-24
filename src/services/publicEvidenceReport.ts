@@ -1,5 +1,4 @@
-import { createGitHubSourceAdapter } from "./sources/githubSource";
-import { createHackerNewsSourceAdapter } from "./sources/hackerNewsSource";
+import { createAll35Adapters } from "./sources/extendedAdapters";
 import type { FetchJson, SourceAdapter } from "./sources/sourceAdapter";
 import type { EvidenceItem } from "../domain/evidence";
 import type { QueryBundle } from "../domain/queryBundle";
@@ -72,21 +71,21 @@ export async function loadPublicEvidenceReport({
   minimumLoadMs = defaultMinimumLoadMs,
 }: LoadPublicEvidenceReportInput): Promise<CompassReportModel> {
   const startedAt = Date.now();
-  const adapters = [
-    createGitHubSourceAdapter({ fetchJson }),
-    createHackerNewsSourceAdapter({ fetchJson }),
-  ];
+  // Load all 35 specialized adapters that target 7 distinct pillars
+  const adapters = createAll35Adapters({ fetchJson });
+  
   const liveEvidence = (
     await Promise.all(adapters.map((adapter) => scanSource(adapter, queryBundle)))
   ).flat();
+  
   const elapsed = Date.now() - startedAt;
 
   if (elapsed < minimumLoadMs) {
     await delay(minimumLoadMs - elapsed);
   }
 
-  const fallbackEvidence = createQueryDerivedEvidence(idea, queryBundle);
-  const evidence = mergeEvidence(liveEvidence, fallbackEvidence);
+  // 100% Honest Data - No fallback mocks used
+  const evidence = liveEvidence;
 
   return buildCompassReport({
     idea,

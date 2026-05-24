@@ -1,0 +1,543 @@
+{
+  "methodologyVersion": "0.1",
+  "idea": {
+    "name": "Local Small-Batch Coffee Roaster",
+    "problem": "People in the neighborhood want fresh roasted beans but only have access to stale supermarket coffee.",
+    "targetUser": "Local Coffee Enthusiasts",
+    "lens": "Local Business / Retail"
+  },
+  "queryBundle": {
+    "version": 1,
+    "locked": true,
+    "problemKeywords": [
+      "stale coffee beans",
+      "bad local coffee"
+    ],
+    "solutionKeywords": [
+      "small batch roaster",
+      "local roasted coffee"
+    ],
+    "audienceKeywords": [
+      "coffee snob",
+      "espresso enthusiast"
+    ],
+    "competitorKeywords": [
+      "starbucks",
+      "blue bottle"
+    ],
+    "painPhrases": [
+      "manual process",
+      "too much paperwork",
+      "after-hours notes",
+      "how do I reduce",
+      "alternative to",
+      "too expensive",
+      "workaround"
+    ],
+    "exclusions": [
+      "instant coffee",
+      "tea"
+    ]
+  },
+  "queryQuality": {
+    "label": "Strong",
+    "warning": "Ambiguity controlled with audience terms and exclusions."
+  },
+  "pillars": [
+    {
+      "key": "demand",
+      "label": "Demand",
+      "score": 6,
+      "note": "Demand reads public-search targets for \"stale coffee beans\" across free sources."
+    },
+    {
+      "key": "pain",
+      "label": "Pain",
+      "score": 100,
+      "note": "Pain reads workaround and complaint language around \"stale coffee beans\"."
+    },
+    {
+      "key": "momentum",
+      "label": "Momentum",
+      "score": 100,
+      "note": "Momentum reads recent public activity around \"small batch roaster\"."
+    },
+    {
+      "key": "competitionFit",
+      "label": "Competition Fit",
+      "score": 96,
+      "note": "Competition Fit compares visible alternatives such as \"starbucks\"."
+    },
+    {
+      "key": "activity",
+      "label": "Activity",
+      "score": 0,
+      "note": "Activity reads builder and package signals around \"small batch roaster\"."
+    },
+    {
+      "key": "channelFit",
+      "label": "Channel Fit",
+      "score": 0,
+      "note": "Channel Fit checks whether \"coffee snob\" has reachable public communities."
+    },
+    {
+      "key": "evidenceQuality",
+      "label": "Evidence Quality",
+      "score": 80,
+      "note": "Evidence Quality rewards source diversity, exclusions, and query specificity."
+    }
+  ],
+  "formulas": [
+    {
+      "pillar": "Demand",
+      "formula": "0.45 volume + 0.25 unique authors + 0.20 questions + 0.10 engagement",
+      "formulaLatex": "0.45V + 0.25A_u + 0.20Q_i + 0.10E_p",
+      "inputs": [
+        "mention volume",
+        "unique authors",
+        "question intent",
+        "engagement percentile"
+      ],
+      "score": 6
+    },
+    {
+      "pillar": "Pain",
+      "formula": "0.35 pain density + 0.25 workaround density + 0.20 alternative density + 0.20 discussion depth",
+      "formulaLatex": "0.35D_p + 0.25D_w + 0.20D_a + 0.20D_d",
+      "inputs": [
+        "pain phrases",
+        "workarounds",
+        "alternative seeking",
+        "discussion depth"
+      ],
+      "score": 100
+    },
+    {
+      "pillar": "Momentum",
+      "formula": "0.40 short growth + 0.30 medium growth + 0.20 sustained growth - 0.10 spike penalty",
+      "formulaLatex": "0.40G_{30} + 0.30G_{90} + 0.20G_s - 0.10P_{spike}",
+      "inputs": [
+        "30-day rate",
+        "90-day rate",
+        "sustained trend",
+        "spike penalty"
+      ],
+      "score": 100
+    },
+    {
+      "pillar": "Competition Fit",
+      "formula": "100 * exp(-((supply percentile - 60)^2) / (2 * 25^2))",
+      "formulaLatex": "100e^{-\\frac{(P_s - 60)^2}{2 \\cdot 25^2}}",
+      "inputs": [
+        "competitor count",
+        "launch count",
+        "repo/package supply",
+        "saturation penalty"
+      ],
+      "score": 96
+    },
+    {
+      "pillar": "Activity",
+      "formula": "weighted available activity signals; non-relevant missing metrics excluded",
+      "formulaLatex": "\\frac{\\sum w_i s_i}{\\sum w_i}",
+      "inputs": [
+        "repo activity",
+        "package activity",
+        "launch recency",
+        "discussion freshness"
+      ],
+      "score": 0
+    },
+    {
+      "pillar": "Channel Fit",
+      "formula": "0.35 concentration + 0.25 community count + 0.25 engagement + 0.15 lens match",
+      "formulaLatex": "0.35C_s + 0.25C_n + 0.25E_c + 0.15L_m",
+      "inputs": [
+        "source concentration",
+        "community count",
+        "top channel engagement",
+        "lens match"
+      ],
+      "score": 0
+    },
+    {
+      "pillar": "Evidence Quality",
+      "formula": "0.25 source diversity + 0.20 sample size + 0.20 precision + 0.15 ambiguity inverse + 0.10 duplicate inverse + 0.10 recency coverage",
+      "formulaLatex": "0.25D_s + 0.20N + 0.20R_p + 0.15A_i + 0.10D_i + 0.10R_c",
+      "inputs": [
+        "source diversity",
+        "sample size",
+        "precision",
+        "ambiguity",
+        "duplicates",
+        "recency"
+      ],
+      "score": 80
+    }
+  ],
+  "summary": {
+    "score": 59,
+    "uncertainty": 9,
+    "confidence": "Medium",
+    "range": {
+      "lower": 50,
+      "upper": 68
+    }
+  },
+  "integrity": {
+    "finalScoreAvailable": true,
+    "warnings": []
+  },
+  "evidence": [
+    {
+      "id": "hn-search-47026556",
+      "source": "Hacker News",
+      "sourceType": "post",
+      "date": "2026-02-15",
+      "query": "stale coffee beans",
+      "snippet": "Show HN: GPU Perpetual Futures Prototype",
+      "link": "https://github.com/zacharyfrederick/compex",
+      "metricContribution": "Demand",
+      "included": true,
+      "reason": "9 points and 3 comments from live search.",
+      "duplicateCluster": "hn-search-47026556",
+      "signalStrength": 12
+    },
+    {
+      "id": "hn-search-31890206",
+      "source": "Hacker News",
+      "sourceType": "post",
+      "date": "2022-06-27",
+      "query": "stale coffee beans",
+      "snippet": "Ask HN: Who is coordinating a plan to make small towns hipster?",
+      "link": "https://news.ycombinator.com/item?id=31890206",
+      "metricContribution": "Demand",
+      "included": true,
+      "reason": "1 points and 15 comments from live search.",
+      "duplicateCluster": "hn-search-31890206",
+      "signalStrength": 16
+    },
+    {
+      "id": "hn-search-46786094",
+      "source": "Hacker News",
+      "sourceType": "post",
+      "date": "2026-01-27",
+      "query": "stale coffee beans",
+      "snippet": "Show HN: Been Ski – Track ski resort visits across 4,500 resorts worldwide",
+      "link": "https://beenski.vercel.app",
+      "metricContribution": "Demand",
+      "included": true,
+      "reason": "1 points and 1 comments from live search.",
+      "duplicateCluster": "hn-search-46786094",
+      "signalStrength": 2
+    },
+    {
+      "id": "hn-search-48133162",
+      "source": "Hacker News",
+      "sourceType": "post",
+      "date": "2026-05-14",
+      "query": "stale coffee beans",
+      "snippet": "Show HN: Mind Focus, an Android app for focus and attention recovery",
+      "link": "https://www.ataraxiaapps.com/en/posts/app-mind-focus/",
+      "metricContribution": "Demand",
+      "included": true,
+      "reason": "1 points and 0 comments from live search.",
+      "duplicateCluster": "hn-search-48133162",
+      "signalStrength": 1
+    },
+    {
+      "id": "hn-search-3760981",
+      "source": "Hacker News",
+      "sourceType": "post",
+      "date": "2012-03-27",
+      "query": "stale coffee beans",
+      "snippet": "Another AirBnB Host Horror Story",
+      "link": "https://news.ycombinator.com/item?id=3760981",
+      "metricContribution": "Demand",
+      "included": true,
+      "reason": "1 points and 0 comments from live search.",
+      "duplicateCluster": "hn-search-3760981",
+      "signalStrength": 1
+    },
+    {
+      "id": "reddit-post-1pq3t13",
+      "source": "Reddit",
+      "sourceType": "post",
+      "date": "2025-12-18",
+      "query": "stale coffee beans",
+      "snippet": "Coffee \"shop\" says 2-month-old beans are at peak maturity - thoughts?",
+      "link": "https://reddit.com/r/Coffee/comments/1pq3t13/coffee_shop_says_2monthold_beans_are_at_peak/",
+      "metricContribution": "Pain",
+      "included": true,
+      "reason": "187 comments and 220 score.",
+      "duplicateCluster": "reddit-1pq3t13",
+      "signalStrength": 100
+    },
+    {
+      "id": "reddit-post-1sz3jxq",
+      "source": "Reddit",
+      "sourceType": "post",
+      "date": "2026-04-29",
+      "query": "stale coffee beans",
+      "snippet": "Freezing coffee beans",
+      "link": "https://reddit.com/r/pourover/comments/1sz3jxq/freezing_coffee_beans/",
+      "metricContribution": "Pain",
+      "included": true,
+      "reason": "83 comments and 0 score.",
+      "duplicateCluster": "reddit-1sz3jxq",
+      "signalStrength": 100
+    },
+    {
+      "id": "reddit-post-1s0mykx",
+      "source": "Reddit",
+      "sourceType": "post",
+      "date": "2026-03-22",
+      "query": "stale coffee beans",
+      "snippet": "Freezing coffee beans - Are we actually locking in aromatics or just risking condensation damage?",
+      "link": "https://reddit.com/r/JamesHoffmann/comments/1s0mykx/freezing_coffee_beans_are_we_actually_locking_in/",
+      "metricContribution": "Pain",
+      "included": true,
+      "reason": "56 comments and 24 score.",
+      "duplicateCluster": "reddit-1s0mykx",
+      "signalStrength": 100
+    },
+    {
+      "id": "reddit-post-1s0d3ku",
+      "source": "Reddit",
+      "sourceType": "post",
+      "date": "2026-03-22",
+      "query": "stale coffee beans",
+      "snippet": "Where to get FRESHLY roasted coffee beans with roast dates on the bag?",
+      "link": "https://reddit.com/r/halifax/comments/1s0d3ku/where_to_get_freshly_roasted_coffee_beans_with/",
+      "metricContribution": "Pain",
+      "included": true,
+      "reason": "43 comments and 21 score.",
+      "duplicateCluster": "reddit-1s0d3ku",
+      "signalStrength": 100
+    },
+    {
+      "id": "reddit-post-1t0qu2w",
+      "source": "Reddit",
+      "sourceType": "post",
+      "date": "2026-05-01",
+      "query": "stale coffee beans",
+      "snippet": "India Coffee Beans Mega Thread 🇮🇳",
+      "link": "https://reddit.com/r/IndiaCoffee/comments/1t0qu2w/india_coffee_beans_mega_thread/",
+      "metricContribution": "Pain",
+      "included": true,
+      "reason": "30 comments and 46 score.",
+      "duplicateCluster": "reddit-1t0qu2w",
+      "signalStrength": 100
+    },
+    {
+      "id": "npm-pkg-contentful-batch-libs",
+      "source": "npm",
+      "sourceType": "package",
+      "date": "2026-05-12",
+      "query": "small batch roaster",
+      "snippet": "Library modules used by contentful batch utility CLI tools.",
+      "link": "https://www.npmjs.com/package/contentful-batch-libs",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Popularity score: 100%",
+      "duplicateCluster": "npm-contentful-batch-libs",
+      "signalStrength": 100
+    },
+    {
+      "id": "npm-pkg-@graphql-tools/batch-execute",
+      "source": "npm",
+      "sourceType": "package",
+      "date": "2026-04-03",
+      "query": "small batch roaster",
+      "snippet": "A set of utils for faster development of GraphQL tools",
+      "link": "https://www.npmjs.com/package/@graphql-tools/batch-execute",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Popularity score: 100%",
+      "duplicateCluster": "npm-@graphql-tools/batch-execute",
+      "signalStrength": 100
+    },
+    {
+      "id": "npm-pkg-batch",
+      "source": "npm",
+      "sourceType": "package",
+      "date": "2017-05-16",
+      "query": "small batch roaster",
+      "snippet": "Simple async batch with concurrency control and progress reporting.",
+      "link": "https://www.npmjs.com/package/batch",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Popularity score: 100%",
+      "duplicateCluster": "npm-batch",
+      "signalStrength": 100
+    },
+    {
+      "id": "npm-pkg-@aws-lambda-powertools/batch",
+      "source": "npm",
+      "sourceType": "package",
+      "date": "2026-04-14",
+      "query": "small batch roaster",
+      "snippet": "The batch processing package for the Powertools for AWS Lambda (TypeScript) library.",
+      "link": "https://www.npmjs.com/package/@aws-lambda-powertools/batch",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Popularity score: 100%",
+      "duplicateCluster": "npm-@aws-lambda-powertools/batch",
+      "signalStrength": 100
+    },
+    {
+      "id": "npm-pkg-@aws-sdk/client-batch",
+      "source": "npm",
+      "sourceType": "package",
+      "date": "2026-05-22",
+      "query": "small batch roaster",
+      "snippet": "AWS SDK for JavaScript Batch Client for Node.js, Browser and React Native",
+      "link": "https://www.npmjs.com/package/@aws-sdk/client-batch",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Popularity score: 100%",
+      "duplicateCluster": "npm-@aws-sdk/client-batch",
+      "signalStrength": 100
+    },
+    {
+      "id": "wiki-page-38992003",
+      "source": "Wikipedia",
+      "sourceType": "article",
+      "date": "2025-12-10",
+      "query": "small batch roaster",
+      "snippet": "Union Hand-Roasted Coffee",
+      "link": "https://en.wikipedia.org/?curid=38992003",
+      "metricContribution": "Evidence Quality",
+      "included": true,
+      "reason": "Established encyclopedia article exists for this concept.",
+      "duplicateCluster": "wiki-38992003",
+      "signalStrength": 80
+    },
+    {
+      "id": "wiki-page-2796757",
+      "source": "Wikipedia",
+      "sourceType": "article",
+      "date": "2026-04-24",
+      "query": "small batch roaster",
+      "snippet": "Coffee roasting",
+      "link": "https://en.wikipedia.org/?curid=2796757",
+      "metricContribution": "Evidence Quality",
+      "included": true,
+      "reason": "Established encyclopedia article exists for this concept.",
+      "duplicateCluster": "wiki-2796757",
+      "signalStrength": 80
+    },
+    {
+      "id": "wiki-page-23451648",
+      "source": "Wikipedia",
+      "sourceType": "article",
+      "date": "2026-03-05",
+      "query": "small batch roaster",
+      "snippet": "Third-wave coffee",
+      "link": "https://en.wikipedia.org/?curid=23451648",
+      "metricContribution": "Evidence Quality",
+      "included": true,
+      "reason": "Established encyclopedia article exists for this concept.",
+      "duplicateCluster": "wiki-23451648",
+      "signalStrength": 80
+    },
+    {
+      "id": "wiki-page-25903031",
+      "source": "Wikipedia",
+      "sourceType": "article",
+      "date": "2025-02-15",
+      "query": "small batch roaster",
+      "snippet": "Corn roaster",
+      "link": "https://en.wikipedia.org/?curid=25903031",
+      "metricContribution": "Evidence Quality",
+      "included": true,
+      "reason": "Established encyclopedia article exists for this concept.",
+      "duplicateCluster": "wiki-25903031",
+      "signalStrength": 80
+    },
+    {
+      "id": "wiki-page-1424558",
+      "source": "Wikipedia",
+      "sourceType": "article",
+      "date": "2025-10-21",
+      "query": "small batch roaster",
+      "snippet": "Home roasting coffee",
+      "link": "https://en.wikipedia.org/?curid=1424558",
+      "metricContribution": "Evidence Quality",
+      "included": true,
+      "reason": "Established encyclopedia article exists for this concept.",
+      "duplicateCluster": "wiki-1424558",
+      "signalStrength": 80
+    },
+    {
+      "id": "itunes-app-331177714",
+      "source": "App Store",
+      "sourceType": "app",
+      "date": "2009-09-23",
+      "query": "starbucks",
+      "snippet": "Starbucks",
+      "link": "https://apps.apple.com/us/app/starbucks/id331177714?uo=4",
+      "metricContribution": "Competition Fit",
+      "included": true,
+      "reason": "7944373 user ratings. Existing competition detected.",
+      "duplicateCluster": "app-331177714",
+      "signalStrength": 100
+    },
+    {
+      "id": "itunes-app-488818252",
+      "source": "App Store",
+      "sourceType": "app",
+      "date": "2011-12-16",
+      "query": "starbucks",
+      "snippet": "Chick-fil-A",
+      "link": "https://apps.apple.com/us/app/chick-fil-a/id488818252?uo=4",
+      "metricContribution": "Competition Fit",
+      "included": true,
+      "reason": "4031196 user ratings. Existing competition detected.",
+      "duplicateCluster": "app-488818252",
+      "signalStrength": 100
+    },
+    {
+      "id": "itunes-app-1056813463",
+      "source": "App Store",
+      "sourceType": "app",
+      "date": "2015-11-17",
+      "query": "starbucks",
+      "snippet": "Dunkin'",
+      "link": "https://apps.apple.com/us/app/dunkin/id1056813463?uo=4",
+      "metricContribution": "Competition Fit",
+      "included": true,
+      "reason": "1332855 user ratings. Existing competition detected.",
+      "duplicateCluster": "app-1056813463",
+      "signalStrength": 100
+    },
+    {
+      "id": "itunes-app-1533933692",
+      "source": "App Store",
+      "sourceType": "app",
+      "date": "2020-09-30",
+      "query": "starbucks",
+      "snippet": "Starbucks secret menu!",
+      "link": "https://apps.apple.com/us/app/starbucks-secret-menu/id1533933692?uo=4",
+      "metricContribution": "Competition Fit",
+      "included": true,
+      "reason": "854 user ratings. Existing competition detected.",
+      "duplicateCluster": "app-1533933692",
+      "signalStrength": 85.4
+    }
+  ],
+  "strongestPillar": {
+    "key": "pain",
+    "label": "Pain",
+    "score": 100,
+    "note": "Pain reads workaround and complaint language around \"stale coffee beans\"."
+  },
+  "weakestPillar": {
+    "key": "activity",
+    "label": "Activity",
+    "score": 0,
+    "note": "Activity reads builder and package signals around \"small batch roaster\"."
+  },
+  "interpretation": "Public evidence supports deeper validation. Pain appears strong, while activity data remains thinner.",
+  "disclaimer": "This score reflects public evidence found through selected sources and queries. It is not a prediction of success, customer willingness to pay, or product quality."
+}
