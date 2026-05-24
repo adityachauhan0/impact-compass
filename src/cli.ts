@@ -59,7 +59,7 @@ function wrapText(text: string, width: number): string[] {
 async function main() {
   const args = process.argv.slice(2);
   if (args.length < 2) {
-    console.error(`Usage: npm run cli <input.json> <output.json>`);
+    console.error(`Usage: impact-compass <input.json> <output.json>`);
     process.exit(1);
   }
 

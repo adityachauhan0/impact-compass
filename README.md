@@ -6,6 +6,11 @@
 
 *grab a compass before you sail soldier*
 
+```bash
+npm i impact-compass
+npx impact-compass idea.json output.json
+```
+
 A purely statistical, deterministic project idea validator and market research CLI.
 
 Impact Compass fetches keyword rankings and engagement signals from real sources like GitHub, npm, Reddit, Stack Exchange, Hacker News, Wikipedia, and the App Store. It checks the *hype* around your project before you waste six months, a billion tokens, and enough coffee to make your keyboard anxious.
@@ -63,11 +68,11 @@ The engine spits out a final score out of 100, along with a brutally honest inte
 
 ## Quickstart
 
-Install dependencies, then run an evaluation:
+Install the published package, then run an evaluation:
 
 ```bash
-npm install
-npm run cli example-react.json output.json
+npm i impact-compass
+npx impact-compass idea.json output.json
 ```
 
 ### The Input Schema

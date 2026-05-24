@@ -1,6 +1,6 @@
 {
   "name": "impact-compass",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Deterministic market research CLI for startup idea validation, demand scoring, and competitive analysis.",
   "license": "MIT",
   "repository": {
@@ -12,6 +12,9 @@
     "url": "https://github.com/adityachauhan0/impact-compass/issues"
   },
   "private": false,
+  "bin": {
+    "impact-compass": "./bin/impact-compass.js"
+  },
   "keywords": [
     "market-research",
     "idea-validation",
@@ -41,6 +44,7 @@
   ],
   "files": [
     "assets/",
+    "bin/",
     "src/",
     "DOCUMENTATION.md",
     "SKILLS.md",
@@ -60,7 +64,8 @@
     "lucide-react": "^1.16.0",
     "next": "16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "tsx": "^4.22.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
