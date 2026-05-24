@@ -402,6 +402,20 @@
       "signalStrength": 32.52574989159953
     },
     {
+      "id": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
+      "source": "GitHub",
+      "sourceType": "commit",
+      "date": "2026-04-27",
+      "query": "atomic state",
+      "snippet": "drm: Rename struct drm_atomic_state to drm_atomic_",
+      "link": "https://github.com/mkahola/drm-intel-mika/commit/5164f7e7ff8ec7d41065d3862630c2ba09854328",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Recent commit",
+      "duplicateCluster": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
+      "signalStrength": 50
+    },
+    {
       "id": "ghm-a63d6bac9375e669aa401dd7b1ff0ed808d3ffbf",
       "source": "GitHub",
       "sourceType": "commit",
@@ -430,45 +444,31 @@
       "signalStrength": 50
     },
     {
-      "id": "ghm-e4de2cea10e166868af2fa3f1871e7bef6a7c2b0",
+      "id": "ghm-d259e1dd56402be099dfff94c1a064ffded479a3",
       "source": "GitHub",
       "sourceType": "commit",
-      "date": "2026-04-22",
+      "date": "2026-05-19",
       "query": "atomic state",
-      "snippet": "commit navigation state atomically",
-      "link": "https://github.com/thunderbird/webext-support/commit/e4de2cea10e166868af2fa3f1871e7bef6a7c2b0",
+      "snippet": "feat(state): atomic writes + manifest cache + audi",
+      "link": "https://github.com/avelino/dotagent/commit/d259e1dd56402be099dfff94c1a064ffded479a3",
       "metricContribution": "Momentum",
       "included": true,
       "reason": "Recent commit",
-      "duplicateCluster": "ghm-e4de2cea10e166868af2fa3f1871e7bef6a7c2b0",
+      "duplicateCluster": "ghm-d259e1dd56402be099dfff94c1a064ffded479a3",
       "signalStrength": 50
     },
     {
-      "id": "ghm-cb73ce3bc6f0e4b126b35ccdd3a8c9d85898213c",
+      "id": "ghm-cb42d295c2cf38f8ea8f9300433ffb1bb268b815",
       "source": "GitHub",
       "sourceType": "commit",
-      "date": "2026-05-20",
+      "date": "2026-05-07",
       "query": "atomic state",
-      "snippet": "docs: add v6 changelog - atomic state management r",
-      "link": "https://github.com/bullemanfred-web/Reisekosten-bot-Notion-Slack/commit/cb73ce3bc6f0e4b126b35ccdd3a8c9d85898213c",
+      "snippet": "feat: save workflow state atomically",
+      "link": "https://github.com/Srujan0798/Ultra-Dex-Orc/commit/cb42d295c2cf38f8ea8f9300433ffb1bb268b815",
       "metricContribution": "Momentum",
       "included": true,
       "reason": "Recent commit",
-      "duplicateCluster": "ghm-cb73ce3bc6f0e4b126b35ccdd3a8c9d85898213c",
-      "signalStrength": 50
-    },
-    {
-      "id": "ghm-8cf020dc731e153d50a6897b51643e1a01738682",
-      "source": "GitHub",
-      "sourceType": "commit",
-      "date": "2026-05-20",
-      "query": "atomic state",
-      "snippet": "fix: atomic state management - load once, save onc",
-      "link": "https://github.com/bullemanfred-web/Reisekosten-bot-Notion-Slack/commit/8cf020dc731e153d50a6897b51643e1a01738682",
-      "metricContribution": "Momentum",
-      "included": true,
-      "reason": "Recent commit",
-      "duplicateCluster": "ghm-8cf020dc731e153d50a6897b51643e1a01738682",
+      "duplicateCluster": "ghm-cb42d295c2cf38f8ea8f9300433ffb1bb268b815",
       "signalStrength": 50
     },
     {
@@ -901,9 +901,9 @@
       "link": "https://reddit.com/r/GirlDinnerDiaries/comments/1sq53ul/bf_is_incompetent/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "8224 score",
+      "reason": "8217 score",
       "duplicateCluster": "rd-1sq53ul",
-      "signalStrength": 31.321087252976096
+      "signalStrength": 31.318129095406825
     },
     {
       "id": "rd-1l62j09",
@@ -915,9 +915,9 @@
       "link": "https://reddit.com/r/AITAH/comments/1l62j09/update_aitah_for_telling_a_woman_at_the_gym_that/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "36174 score",
+      "reason": "36168 score",
       "duplicateCluster": "rd-1l62j09",
-      "signalStrength": 36.4672683183286
+      "signalStrength": 36.46669201247935
     },
     {
       "id": "rd-1nq3f5k",
@@ -929,9 +929,9 @@
       "link": "https://reddit.com/r/reactjs/comments/1nq3f5k/react_state_management_in_2025_what_you_actually/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "168 score",
+      "reason": "167 score",
       "duplicateCluster": "rd-1nq3f5k",
-      "signalStrength": 44.55773409227347
+      "signalStrength": 44.50618563451726
     },
     {
       "id": "rd-1jvo2ev",
@@ -943,9 +943,9 @@
       "link": "https://reddit.com/r/popculture/comments/1jvo2ev/justin_bieber_goes_on_wild_unprovoked_tirade/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "4644 score",
+      "reason": "4643 score",
       "duplicateCluster": "rd-1jvo2ev",
-      "signalStrength": 29.335885746637288
+      "signalStrength": 29.335137688532292
     },
     {
       "id": "rd-1qn6pd4",
@@ -957,9 +957,9 @@
       "link": "https://reddit.com/r/BestofRedditorUpdates/comments/1qn6pd4/maintenance_man_at_my_job_repeatedly_threatened/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "3363 score",
+      "reason": "3373 score",
       "duplicateCluster": "rd-1qn6pd4",
-      "signalStrength": 28.214847897006997
+      "signalStrength": 28.225160626024856
     },
     {
       "id": "rdd-1t8hndw",
@@ -1097,9 +1097,9 @@
       "link": "https://reddit.com/r/webdev/",
       "metricContribution": "Channel Fit",
       "included": true,
-      "reason": "3253346 subscribers",
+      "reason": "3253347 subscribers",
       "duplicateCluster": "rdc-2qs0q",
-      "signalStrength": 97.68495581004001
+      "signalStrength": 97.68495781241363
     },
     {
       "id": "rdm-1tm9cn8",
@@ -1489,7 +1489,7 @@
       "link": "https://www.npmjs.com/package/atomic-state",
       "metricContribution": "Momentum",
       "included": true,
-      "reason": "Score: 39348",
+      "reason": "Score: 39349",
       "duplicateCluster": "npm-atomic-state",
       "signalStrength": 100
     },
@@ -1517,7 +1517,7 @@
       "link": "https://www.npmjs.com/package/@kdeveloper/kvark",
       "metricContribution": "Momentum",
       "included": true,
-      "reason": "Score: 24588",
+      "reason": "Score: 24589",
       "duplicateCluster": "npm-@kdeveloper/kvark",
       "signalStrength": 100
     },
@@ -2514,6 +2514,6 @@
     "score": 0,
     "note": "Competition Fit compares visible alternatives such as \"zustand\"."
   },
-  "interpretation": "Public evidence supports deeper validation. Pain appears strong, while activity data remains thinner.",
+  "interpretation": "The idea has moderate validation. There are signals of demand, but it may require a pivot or niche targeting. WARNING: This is a highly saturated Red Ocean market with massive existing competition. Your strongest validation signal is Demand, while Competition Fit remains the weakest link.",
   "disclaimer": "This score reflects public evidence found through selected sources and queries. It is not a prediction of success, customer willingness to pay, or product quality."
 }

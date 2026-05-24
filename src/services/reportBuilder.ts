@@ -146,6 +146,35 @@ function createFormulaReadouts(pillarScores: PillarScores): FormulaReadout[] {
   }));
 }
 
+function generateInterpretation(
+  score: number,
+  strongest: PillarSummary,
+  weakest: PillarSummary,
+  compFit: number
+): string {
+  let interpretation = "";
+  
+  if (score >= 90) {
+    interpretation = "This idea is highly validated. Public evidence shows exceptional product-market potential. ";
+  } else if (score >= 70) {
+    interpretation = "Public evidence supports deeper validation. The idea shows strong promise but faces some friction. ";
+  } else if (score >= 50) {
+    interpretation = "The idea has moderate validation. There are signals of demand, but it may require a pivot or niche targeting. ";
+  } else {
+    interpretation = "Public evidence is currently lacking. This market may be too small, or the problem is not widely discussed online. ";
+  }
+
+  if (compFit <= 30) {
+    interpretation += "WARNING: This is a highly saturated Red Ocean market with massive existing competition. ";
+  } else if (compFit >= 80) {
+    interpretation += "Excitingly, there appears to be very little direct competition (Blue Ocean). ";
+  }
+
+  interpretation += `Your strongest validation signal is ${strongest.label}, while ${weakest.label} remains the weakest link.`;
+
+  return interpretation;
+}
+
 export function buildCompassReport(
   input: BuildCompassReportInput,
 ): CompassReportModel {
@@ -183,8 +212,7 @@ export function buildCompassReport(
     evidence,
     strongestPillar,
     weakestPillar,
-    interpretation:
-      "Public evidence supports deeper validation. Pain appears strong, while activity data remains thinner.",
+    interpretation: generateInterpretation(score.score, strongestPillar, weakestPillar, input.pillarScores.competitionFit),
     disclaimer:
       "This score reflects public evidence found through selected sources and queries. It is not a prediction of success, customer willingness to pay, or product quality.",
   };
