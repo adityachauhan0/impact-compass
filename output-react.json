@@ -67,7 +67,7 @@
     {
       "key": "competitionFit",
       "label": "Competition Fit",
-      "score": 100,
+      "score": 0,
       "note": "Competition Fit compares visible alternatives such as \"zustand\"."
     },
     {
@@ -136,7 +136,7 @@
         "repo/package supply",
         "saturation penalty"
       ],
-      "score": 100
+      "score": 0
     },
     {
       "pillar": "Activity",
@@ -178,12 +178,12 @@
     }
   ],
   "summary": {
-    "score": 99,
+    "score": 69,
     "uncertainty": 9,
     "confidence": "Medium",
     "range": {
-      "lower": 90,
-      "upper": 100
+      "lower": 60,
+      "upper": 78
     }
   },
   "integrity": {
@@ -402,48 +402,6 @@
       "signalStrength": 32.52574989159953
     },
     {
-      "id": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
-      "source": "GitHub",
-      "sourceType": "commit",
-      "date": "2026-04-27",
-      "query": "atomic state",
-      "snippet": "drm: Rename struct drm_atomic_state to drm_atomic_",
-      "link": "https://github.com/mkahola/drm-intel-mika/commit/5164f7e7ff8ec7d41065d3862630c2ba09854328",
-      "metricContribution": "Momentum",
-      "included": true,
-      "reason": "Recent commit",
-      "duplicateCluster": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
-      "signalStrength": 50
-    },
-    {
-      "id": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
-      "source": "GitHub",
-      "sourceType": "commit",
-      "date": "2026-04-27",
-      "query": "atomic state",
-      "snippet": "drm: Rename struct drm_atomic_state to drm_atomic_",
-      "link": "https://github.com/sudo-su-f/drm-tip/commit/5164f7e7ff8ec7d41065d3862630c2ba09854328",
-      "metricContribution": "Momentum",
-      "included": true,
-      "reason": "Recent commit",
-      "duplicateCluster": "ghm-5164f7e7ff8ec7d41065d3862630c2ba09854328",
-      "signalStrength": 50
-    },
-    {
-      "id": "ghm-3dc8aeb716bebc67b3c9843ddc518880a55983e6",
-      "source": "GitHub",
-      "sourceType": "commit",
-      "date": "2026-05-06",
-      "query": "atomic state",
-      "snippet": "Merge pull request #140 from tjackiet/claude/atomi",
-      "link": "https://github.com/tjackiet/bitbank-cli-skills-archive/commit/3dc8aeb716bebc67b3c9843ddc518880a55983e6",
-      "metricContribution": "Momentum",
-      "included": true,
-      "reason": "Recent commit",
-      "duplicateCluster": "ghm-3dc8aeb716bebc67b3c9843ddc518880a55983e6",
-      "signalStrength": 20
-    },
-    {
       "id": "ghm-a63d6bac9375e669aa401dd7b1ff0ed808d3ffbf",
       "source": "GitHub",
       "sourceType": "commit",
@@ -458,17 +416,59 @@
       "signalStrength": 50
     },
     {
-      "id": "ghm-42750ca687871d126bd785b8bda35a983c414c4d",
+      "id": "ghm-cb5bfd9cb703bff579c68c8938a969cffcd61dbc",
       "source": "GitHub",
       "sourceType": "commit",
-      "date": "2026-05-22",
+      "date": "2026-05-20",
       "query": "atomic state",
-      "snippet": "state: write seen keys atomically (#11)",
-      "link": "https://github.com/drakulavich/uae-news-digest/commit/42750ca687871d126bd785b8bda35a983c414c4d",
+      "snippet": "fix(audio): make start/stop state transitions atom",
+      "link": "https://github.com/Code2731/Lum/commit/cb5bfd9cb703bff579c68c8938a969cffcd61dbc",
       "metricContribution": "Momentum",
       "included": true,
       "reason": "Recent commit",
-      "duplicateCluster": "ghm-42750ca687871d126bd785b8bda35a983c414c4d",
+      "duplicateCluster": "ghm-cb5bfd9cb703bff579c68c8938a969cffcd61dbc",
+      "signalStrength": 50
+    },
+    {
+      "id": "ghm-e4de2cea10e166868af2fa3f1871e7bef6a7c2b0",
+      "source": "GitHub",
+      "sourceType": "commit",
+      "date": "2026-04-22",
+      "query": "atomic state",
+      "snippet": "commit navigation state atomically",
+      "link": "https://github.com/thunderbird/webext-support/commit/e4de2cea10e166868af2fa3f1871e7bef6a7c2b0",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Recent commit",
+      "duplicateCluster": "ghm-e4de2cea10e166868af2fa3f1871e7bef6a7c2b0",
+      "signalStrength": 50
+    },
+    {
+      "id": "ghm-cb73ce3bc6f0e4b126b35ccdd3a8c9d85898213c",
+      "source": "GitHub",
+      "sourceType": "commit",
+      "date": "2026-05-20",
+      "query": "atomic state",
+      "snippet": "docs: add v6 changelog - atomic state management r",
+      "link": "https://github.com/bullemanfred-web/Reisekosten-bot-Notion-Slack/commit/cb73ce3bc6f0e4b126b35ccdd3a8c9d85898213c",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Recent commit",
+      "duplicateCluster": "ghm-cb73ce3bc6f0e4b126b35ccdd3a8c9d85898213c",
+      "signalStrength": 50
+    },
+    {
+      "id": "ghm-8cf020dc731e153d50a6897b51643e1a01738682",
+      "source": "GitHub",
+      "sourceType": "commit",
+      "date": "2026-05-20",
+      "query": "atomic state",
+      "snippet": "fix: atomic state management - load once, save onc",
+      "link": "https://github.com/bullemanfred-web/Reisekosten-bot-Notion-Slack/commit/8cf020dc731e153d50a6897b51643e1a01738682",
+      "metricContribution": "Momentum",
+      "included": true,
+      "reason": "Recent commit",
+      "duplicateCluster": "ghm-8cf020dc731e153d50a6897b51643e1a01738682",
       "signalStrength": 50
     },
     {
@@ -901,9 +901,9 @@
       "link": "https://reddit.com/r/GirlDinnerDiaries/comments/1sq53ul/bf_is_incompetent/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "8219 score",
+      "reason": "8224 score",
       "duplicateCluster": "rd-1sq53ul",
-      "signalStrength": 31.318974540320404
+      "signalStrength": 31.321087252976096
     },
     {
       "id": "rd-1l62j09",
@@ -915,9 +915,9 @@
       "link": "https://reddit.com/r/AITAH/comments/1l62j09/update_aitah_for_telling_a_woman_at_the_gym_that/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "36164 score",
+      "reason": "36174 score",
       "duplicateCluster": "rd-1l62j09",
-      "signalStrength": 36.46630775546509
+      "signalStrength": 36.4672683183286
     },
     {
       "id": "rd-1nq3f5k",
@@ -929,9 +929,9 @@
       "link": "https://reddit.com/r/reactjs/comments/1nq3f5k/react_state_management_in_2025_what_you_actually/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "169 score",
+      "reason": "168 score",
       "duplicateCluster": "rd-1nq3f5k",
-      "signalStrength": 44.60897842756548
+      "signalStrength": 44.55773409227347
     },
     {
       "id": "rd-1jvo2ev",
@@ -957,9 +957,9 @@
       "link": "https://reddit.com/r/BestofRedditorUpdates/comments/1qn6pd4/maintenance_man_at_my_job_repeatedly_threatened/",
       "metricContribution": "Pain",
       "included": true,
-      "reason": "3370 score",
+      "reason": "3363 score",
       "duplicateCluster": "rd-1qn6pd4",
-      "signalStrength": 28.22207002016778
+      "signalStrength": 28.214847897006997
     },
     {
       "id": "rdd-1t8hndw",
@@ -1069,9 +1069,9 @@
       "link": "https://reddit.com/r/developersIndia/",
       "metricContribution": "Channel Fit",
       "included": true,
-      "reason": "1540948 subscribers",
+      "reason": "1540951 subscribers",
       "duplicateCluster": "rdc-2dfnk0",
-      "signalStrength": 92.81682398001281
+      "signalStrength": 92.8168366626082
     },
     {
       "id": "rdc-341hd",
@@ -1097,9 +1097,9 @@
       "link": "https://reddit.com/r/webdev/",
       "metricContribution": "Channel Fit",
       "included": true,
-      "reason": "3253345 subscribers",
+      "reason": "3253346 subscribers",
       "duplicateCluster": "rdc-2qs0q",
-      "signalStrength": 97.68495380766576
+      "signalStrength": 97.68495581004001
     },
     {
       "id": "rdm-1tm9cn8",
@@ -1489,7 +1489,7 @@
       "link": "https://www.npmjs.com/package/atomic-state",
       "metricContribution": "Momentum",
       "included": true,
-      "reason": "Score: 39349",
+      "reason": "Score: 39348",
       "duplicateCluster": "npm-atomic-state",
       "signalStrength": 100
     },
@@ -1872,20 +1872,6 @@
       "signalStrength": 30
     },
     {
-      "id": "wk-19604151",
-      "source": "Wikipedia",
-      "sourceType": "article",
-      "date": "2026-05-02",
-      "query": "atomic state",
-      "snippet": "Atomic mass",
-      "link": "https://en.wikipedia.org/?curid=19604151",
-      "metricContribution": "Evidence Quality",
-      "included": true,
-      "reason": "Encyclopedia entry",
-      "duplicateCluster": "wk-19604151",
-      "signalStrength": 75
-    },
-    {
       "id": "wk-11778948",
       "source": "Wikipedia",
       "sourceType": "article",
@@ -1898,6 +1884,20 @@
       "reason": "Encyclopedia entry",
       "duplicateCluster": "wk-11778948",
       "signalStrength": 75
+    },
+    {
+      "id": "wk-337775",
+      "source": "Wikipedia",
+      "sourceType": "article",
+      "date": "2026-05-06",
+      "query": "atomic state",
+      "snippet": "Nuclear weapons testing",
+      "link": "https://en.wikipedia.org/?curid=337775",
+      "metricContribution": "Evidence Quality",
+      "included": true,
+      "reason": "Encyclopedia entry",
+      "duplicateCluster": "wk-337775",
+      "signalStrength": 30
     },
     {
       "id": "wkm-1206",
@@ -2509,10 +2509,10 @@
     "note": "Demand reads public-search targets for \"react state management\" across free sources."
   },
   "weakestPillar": {
-    "key": "evidenceQuality",
-    "label": "Evidence Quality",
-    "score": 93,
-    "note": "Evidence Quality rewards source diversity, exclusions, and query specificity."
+    "key": "competitionFit",
+    "label": "Competition Fit",
+    "score": 0,
+    "note": "Competition Fit compares visible alternatives such as \"zustand\"."
   },
   "interpretation": "Public evidence supports deeper validation. Pain appears strong, while activity data remains thinner.",
   "disclaimer": "This score reflects public evidence found through selected sources and queries. It is not a prediction of success, customer willingness to pay, or product quality."

@@ -243,11 +243,21 @@ export function calculateCompassScore(
 ): ScoreSummary {
   const weights = options.weights ?? defaultWeights;
   const totalWeight = Object.values(weights).reduce((sum, weight) => sum + weight, 0);
-  const weightedScore =
+  let weightedScore =
     Object.entries(weights).reduce((sum, [pillar, weight]) => {
       return sum + pillars[pillar as keyof PillarScores] * weight;
     }, 0) / totalWeight;
   const uncertainty = options.uncertainty ?? 10;
+
+  // Red Ocean Saturation Penalty
+  // High demand but very low Competition Fit (meaning massive competition volume)
+  let saturationPenalty = 0;
+  if (pillars.demand > 70 && pillars.competitionFit < 30) {
+    // Dock up to 15 extra points for extreme saturation
+    saturationPenalty = (30 - pillars.competitionFit) * 0.5;
+  }
+  
+  weightedScore -= saturationPenalty;
 
   return {
     score: clampScore(weightedScore),

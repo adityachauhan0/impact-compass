@@ -193,7 +193,7 @@ export function derivePillarScoresFromEvidence(evidence: EvidenceItem[]): Pillar
     demand: scoreByContribution(evidence, "Demand"),
     pain: scoreByContribution(evidence, "Pain"),
     momentum: scoreByContribution(evidence, "Momentum"),
-    competitionFit: scoreByContribution(evidence, "Competition Fit"),
+    competitionFit: clamp(100 - scoreByContribution(evidence, "Competition Fit")),
     activity: scoreByContribution(evidence, "Activity"),
     channelFit: scoreByContribution(evidence, "Channel Fit"),
     evidenceQuality: scoreByContribution(evidence, "Evidence Quality"),
